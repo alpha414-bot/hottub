@@ -3,10 +3,13 @@ import React, { FC, useMemo } from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-const Gallery: FC<{
+interface GalleryInterface {
     img: any;
     directory: any;
-}> = ({ img, directory }) => {
+    thumbnailPosition?: "top" | "right" | "bottom" | "left" | undefined;
+}
+
+const Gallery: FC<GalleryInterface> = ({ img, directory, thumbnailPosition }) => {
     const images = useMemo(() => {
         const parse_data = JSON.parse(img);
         if (directory) {
@@ -21,11 +24,13 @@ const Gallery: FC<{
     return (
         <div className="container mx-auto">
             <ImageGallery
-                items={images}
-                useBrowserFullscreen={false}
-                showFullscreenButton={false}
-                showPlayButton={false}
-                thumbnailPosition="left"
+                {...{
+                    items: images,
+                    useBrowserFullscreen: false,
+                    showFullscreenButton: false,
+                    showPlayButton: false,
+                    thumbnailPosition,
+                }}
                 renderItem={({ original }) => (
                     <div className="relative flex items-start justify-start md:mx-6">
                         <img src={original} alt="" className="w-full" />

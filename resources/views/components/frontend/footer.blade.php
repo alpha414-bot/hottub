@@ -10,7 +10,7 @@
 @endphp
 <section class=" py-8 px-4 bg-hot-950 text-white grid lg:grid-cols-3 gap-y-6 items-stretch lg:px-24">
     <div class="flex flex-col items-center justify-center">
-        <img src="{{ $logo }}" alt="{{ $appname }} Logo" class="min-w-52 max-w-[72%]">
+        <img src="{{ $white_logo }}" alt="{{ $appname }} Logo" class="min-w-52 max-w-[72%]">
     </div>
     <div class="flex flex-col items-center space-y-8 py-8 lg:py-2">
         <div class="flex items-center gap-x-4">

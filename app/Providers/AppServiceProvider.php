@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::share('appname', getenv('APP_NAME'));
-        View::share('logo', asset("/img/logo.jpg"));
+        View::share('logo', asset("/img/logo.png"));
+        View::share('white_logo', asset("/img/white-logo.png"));
         View::share('address', getenv("ADDRESS"));
         View::share("map_address", getenv("MAP_ADDRESS"));
         View::share("telephone", getenv("TELEPHONE"));

@@ -47,7 +47,7 @@
             </div>
             <div class="xl:sticky top-0 py-4 h-auto">
                 <div id="product-image-gallery" data-images="{{ json_encode($product->images) }}"
-                    data-directory="{{ asset('/img/products/' . $product->slug . '/') }}"></div>
+                    data-directory="{{ asset('/img/products/' . $product->slug . '/') }}" data-thumbnail-position="left"></div>
             </div>
             <div class="space-y-5 xl:py-12">
                 {{-- Breadcrumb --}}

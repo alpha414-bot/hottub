@@ -166,8 +166,8 @@
             style="background-image: url('{{ asset('/img/wavy_2.svg') }}');">
             <h2></h2>
         </div>
-        <div class="relative">
-            <div class="space-y-6 pb-10 md:pb-24 md:px-16">
+        <div class="relative space-y-12">
+            <div class="space-y-6md:px-16">
                 <h2 class="text-5xl text-center text-hot-700 md:text-7xl">YOUR <span class="font-bold">TRUSTED</span> LOCAL SOURCE
                 </h2>
                 <p class="text-gray-700 italic text-4xl text-center">Proudly Serving Alabama,
@@ -176,11 +176,11 @@
                 <p class="text-gray-900 text-xl text-center tracking-tighter">With Dothan Hot Tub Warehouse, you can
                     start
                     relaxing in no time. As your trusted local source for all
-                    things hot tub, we’re here to help you find the perfect hot tub for your family. Enjoy superior
+                    things hot tub, we're here to help you find the perfect hot tub for your family. Enjoy superior
                     hydrotherapy and unmatched quality, all with the convenience of local service and support.</p>
             </div>
             {{-- Gallery is here --}}
-            <div class="text-center flex items-center justify-center">
+            <div class="text-center flex flex-col items-center justify-center">
                 <x-frontend.gallery />
             </div>
 

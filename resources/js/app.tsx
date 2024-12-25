@@ -12,8 +12,11 @@ if (document.getElementById("product-image-gallery")) {
     const element = document.getElementById("product-image-gallery");
     const img = element?.getAttribute("data-images");
     const directory = element?.getAttribute("data-directory");
+    const thumbnailPosition = (element?.getAttribute(
+        "data-thumbnail-position"
+    ) || "bottom") as any;
     ReactDOM.render(
-        <Gallery {...{ img, directory }} />,
+        <Gallery {...{ img, directory, thumbnailPosition }} />,
         document.getElementById("product-image-gallery")
     );
 }

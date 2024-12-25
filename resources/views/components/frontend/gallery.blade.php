@@ -1,4 +1,4 @@
-<section class="p-4 grid gap-2 md:gap-4">
+<section class="hidden p-4 gap-2 md:gap-4 lg:grid">
     <div class="grid grid-cols-2 gap-2 md:gap-4">
         <div>
             <img class="h-auto max-w-full" src="{{ asset('/img/gallery/1.jpg') }}"
@@ -51,8 +51,9 @@
     </div>
 </section>
 
-<section>
-    <div>
+<section class="h-auto py-2 block lg:hidden">
+    <div id="product-image-gallery"
+        data-images="{{ json_encode(['/gallery/6.png', '/gallery/9.jpg', '/gallery/10.png', '/gallery/5.jpg', '/gallery/8.jpg', '/products/showcase/falcon_bottom_showcase_1.jpg', '/products/showcase/tiger_wolf_jaguar_bottom_showcase_1.jpg', 'products/showcase/tiger_wolf_jaguar_bottom_showcase_3.jpg']) }}"
+        data-directory="{{ asset('/img') }}" data-thumbnail-position="left"></div>
 
-    </div>
 </section>
