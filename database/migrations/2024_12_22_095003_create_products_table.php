@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->longText('type'); // full-powered-hot-tubs / plug-and-play-hot-tubs
             $table->string('caption')->nullable();
-            $table->string('short_description')->nullable();
-            $table->string('long_description')->nullable();
+            $table->longText('short_description')->nullable();
+            $table->longText('long_description')->nullable();
             $table->string('measurement')->nullable();
             $table->json('images')->nullable();
             $table->json('features')->nullable();
