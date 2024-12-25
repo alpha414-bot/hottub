@@ -73,7 +73,7 @@
                     <p class="text-lg font-normal">
                         {{ $product->long_description }}
                     </p>
-                    <img src="/img/warranty_notice.jpg" alt="Warrant Notice Image" class="w-48">
+                    <img src="{{ asset('/img/warranty_notice.jpg') }}" alt="Warrant Notice Image" class="w-48">
                     <ul class="list-disc list-inside italic ms-3">
                         @if ($product->free_delivery)
                             <li>Includes <span class="text-red-500 font-medium">FREE</span> delivery!</li>
@@ -109,7 +109,8 @@
                     style="background-image: url('{{ asset('/img/double_wavy.svg') }}');">
                     <h2></h2>
                 </div>
-                <div class="flex flex-wrap flex-col justify-center gap-x-14 gap-y-7 items-center pb-16 xl:gap-x-24 md:flex-row">
+                <div
+                    class="flex flex-wrap flex-col justify-center gap-x-14 gap-y-7 items-center pb-16 xl:gap-x-24 md:flex-row">
                     <div class="flex flex-col items-center justify-center ">
                         <p class="text-6xl font-medium">{{ $product->person_capacity }}</p>
                         <p class="text-lg">Person Capacity</p>

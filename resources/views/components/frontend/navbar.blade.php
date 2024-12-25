@@ -37,7 +37,7 @@
     </a>
 </div>
 
-<div x-show="nav" class="fixed inset-0 z-50 bg-white animate-slideright h-screen flex flex-col">
+<div x-show="nav" class="fixed inset-0 z-50 bg-white animate-slideright h-screen flex flex-col" style="display:none;">
     <div class="flex justify-end py-4 px-4">
         <button type="button" class="block border-none outline-none focus:ring-4 ring-hot-700/25 p-1 rounded-lg"
             @click="nav=false">
