@@ -66,8 +66,8 @@ Route::post("/contact-us", function (Request $request) {
     // Send email
     $data = $request->all();
     Mail::send('mail', $data, function ($message) use ($data, $name) {
-        $message->to(getenv('MAIL_FROM_ADDRESS'), getenv('APP_NAME'))
-        ->subject("New Request | " . $data['name']);
+        $message->to(getenv('MAIL_TO_ADDRESS'), getenv('APP_NAME'))
+        ->subject("New Message Request | " . $data['name']);
         // ->subject($name . " warehouse - " . $data['subject'] . " from " . $data['name']);
     });
     return redirect()->back()->with('success', 'Your message has been sent successfully');
