@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="{ nav: false }">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title }} - {{ $name }}</title>
+    @isset($title)
+        <title>{{ $title }} - {{ $appname }}</title>
+    @endisset
     {{-- Meta --}}
     @isset($meta)
         {{ $meta }}
     @endisset
     {{-- Icon --}}
+    <link type="image/x-icon" rel="shortcut icon" href="{{ asset('/img/favicon/apple-icon-114x114.png') }}" />
     <link href={{ asset('/img/favicon/apple-icon-57x57.png') }} rel="apple-touch-icon" sizes="57x57" />
     <link href={{ asset('/img/favicon/apple-icon-60x60.png') }} rel="apple-touch-icon" sizes="60x60" />
     <link href={{ asset('/img/favicon/apple-icon-72x72.png') }} rel="apple-touch-icon" sizes="72x72" />
@@ -40,28 +43,39 @@
         {{ $headcss }}
     @endisset
     <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.tsx'])
 </head>
 
-<body class="font-sans antialiased">
-    {{-- Announcement --}}
-    <div class="bg-hot-700 py-3 px-16 text-center grid grid-cols-[1fr_auto] items-center">
-        <div class="grow w-full text-white text-base font-medium font-sans">
-            5-Star Google Reviews - Alabama's very own, BBB Accredited, {{ $name }} Warehouse
+<body class="font-sans antialiased relative">
+    @if (!isset($notemplate))
+        {{-- Announcement --}}
+        <div
+            class="bg-hot-700 py-3 px-4 text-center grid grid-cols-1 gap-y-2 items-center md:grid-cols-[1fr_auto] md:px-16">
+            <div class="grow w-full text-white text-base font-medium font-sans">
+                5-Star Google Reviews - Alabama's very own, BBB Accredited, {{ $appname }} Warehouse
+            </div>
+            <div class="flex items-center justify-center gap-x-4">
+                <a href="{{ $facebook_link }}">
+                    <x-feathericon-facebook class="text-white w-5 h-5" />
+                </a>
+                <a href="{{ $linkedin_link }}">
+                    <x-feathericon-linkedin class="text-white w-5 h-5" />
+                </a>
+                <a href="{{ $instagram_link }}">
+                    <x-feathericon-instagram class="text-white w-5 h-5" />
+                </a>
+            </div>
         </div>
-        <div class="flex items-center gap-x-2">
-            <x-feathericon-facebook class="text-white w-5 h-5" />
-            <x-feathericon-linkedin class="text-white w-5 h-5" />
-            <x-feathericon-instagram class="text-white w-5 h-5" />
-        </div>
-    </div>
-    {{-- Navbar --}}
-    <x-frontend.navbar />
+        {{-- Navbar --}}
+        <x-frontend.navbar />
+    @endif
     <main>
         {{ $slot }}
     </main>
-    {{-- Footer --}}
-    <x-frontend.footer />
+    @if (!isset($notemplate))
+        {{-- Footer --}}
+        <x-frontend.footer />
+    @endif
     @isset($headjs)
         {{ $headjs }}
     @endisset

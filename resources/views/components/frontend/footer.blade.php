@@ -1,13 +1,18 @@
 {{--  --}}
-<?php
-$footer_links = [['text' => 'Hot Tubs', 'link' => 'hot-tubs'], ['text' => 'shop', 'link' => 'shop'], ['text' => 'Why Choose Us?', 'link' => 'about'], ['text' => 'Contact Us', 'link' => 'contactus'], ['text' => 'Privacy Policy', 'link' => 'privacy']];
-?>
-{{-- <section class=" py-8 px-24 bg-hot-950 text-white flex flex-row justify-evenly items-center"> --}}
-<section class=" py-8 px-24 bg-hot-950 text-white grid grid-cols-3 items-stretch">
+@php
+    $footer_links = [
+        ['text' => 'Hot Tubs', 'link' => route('hot-tubs')],
+        ['text' => 'shop', 'link' => route('hot-tubs')],
+        ['text' => 'Why Choose Us?', 'link' => route('about-us')],
+        ['text' => 'Contact Us', 'link' => route('contact-us')],
+        ['text' => 'Privacy Policy', 'link' => route('privacy-policy')],
+    ];
+@endphp
+<section class=" py-8 px-4 bg-hot-950 text-white grid lg:grid-cols-3 gap-y-6 items-stretch lg:px-24">
     <div class="flex flex-col items-center justify-center">
-        <img src="{{ $logo }}" alt="{{ $name }} Logo" class="min-w-64">
+        <img src="{{ $logo }}" alt="{{ $appname }} Logo" class="min-w-52 max-w-[72%]">
     </div>
-    <div class="flex flex-col items-center space-y-8">
+    <div class="flex flex-col items-center space-y-8 py-8 lg:py-2">
         <div class="flex items-center gap-x-4">
             <span class="text-xl font-medium">Follow us:</span>
             <div class="space-x-0.5">
@@ -25,7 +30,7 @@ $footer_links = [['text' => 'Hot Tubs', 'link' => 'hot-tubs'], ['text' => 'shop'
         <div>
             <ul class="flex flex-row items-center flex-wrap justify-center gap-x-2">
                 @foreach ($footer_links as $key => $item)
-                    <li><a href="/{{ $item['link'] }}"
+                    <li><a href="{{ $item['link'] }}"
                             class="hover:underline hover:underline-offset-2 decoration-white">{{ Str::ucfirst($item['text']) }}</a>
                     </li>
                     @if ($key + 1 !== count($footer_links))
@@ -37,37 +42,24 @@ $footer_links = [['text' => 'Hot Tubs', 'link' => 'hot-tubs'], ['text' => 'shop'
         <div class="flex flex-col items-center">
             <a href="{{ $map_address }}" target="_blank"
                 class="hover:underline hover:underline-offset-2 decoration-white">{{ $address }}</a>
-            <ul class="flex flex-row items-center gap-x-2">
+            <ul class="flex flex-col items-center gap-x-2 gap-y-0.5 xl:flex-row">
                 <li>
                     <a href="tel:{{ $telephone }}"
                         class="hover:underline hover:underline-offset-2 decoration-white">{{ $telephone }}</a>
                 </li>
-                <li class="w-1.5 h-1.5 bg-white rounded-full"></li>
+                <li class="hidden w-1.5 h-1.5 bg-white rounded-full xl:block"></li>
                 <li>
                     <a href="mailto:{{ $mail }}"
                         class="hover:underline hover:underline-offset-2 decoration-white">{{ $mail }}</a>
                 </li>
             </ul>
         </div>
-        <div class="">
-            <span><i class="fa-2x fa-brands fa-cc-visa"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-mastercard"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-discover"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-amex"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-jcb"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-diners-club"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-paypal"></i></span>
-            <span><i class="fa-2x fa-brands fa-cc-stripe"></i></span>
-            <span><i class="fa-2x fa-brands fa-google"></i></span>
-            <span><i class="fa-2x fa-brands fa-apple"></i></span>
-        </div>
+        <x-frontend.cards />
     </div>
     <div class="flex flex-col items-center py-6 gap-4">
-        <img src="https://www.dothanhottubs.com/web/image/8268-c48fb60a/PHTA-19-Member-Logo-3C-Rev-RGB.webp"
-            alt="Pool & Hot Tub Alliance MEMBER" class="max-w-56">
-        <img src="https://www.dothanhottubs.com/web/image/8573-5da29fc2/AB-seal-horz.svg.svg"
-            alt="Pool & Hot Tub Alliance MEMBER" class="max-w-32">
-        <img src="https://www.dothanhottubs.com/web/image/9575-c0c58071/white_logo-transparent_bg.png"
-            alt="Pool & Hot Tub Alliance MEMBER" class="max-w-20">
+        <img src="{{ asset('/img/alliance/pool_hottub.jpg') }}" alt="Pool & Hot Tub Alliance MEMBER" class="max-w-64 md:max-w-56">
+        <img src="{{ asset('/img/alliance/accredited_business.svg') }}" alt="Pool & Hot Tub Alliance MEMBER"
+            class="max-w-44 md:max-w-32">
+        <img src="{{ asset('/img/alliance/affirm_logo.png') }}" alt="Pool & Hot Tub Alliance MEMBER" class="max-w-32 md:max-w-20">
     </div>
 </section>

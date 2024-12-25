@@ -22,19 +22,19 @@
 
     {{-- Quick Intro --}}
     <x-frontend.intro />
-    <section class="pt-16 px-32">
-        <div class="grid grid-cols-2 gap-28 justify-evenly">
+    <section class="pt-16 px-4 sm:px-12 xl:px-32">
+        <div class="grid grid-cols-1 gap-20 justify-evenly xl:grid-cols-2">
             <div class="">
-                <div>
+                <div class="space-y-3">
                     <h4 class="text-5xl text-center">Full Powered Hot Tubs</h4>
                     <p class="text-xl text-center">Experience true maximum hydrotherapy</p>
                 </div>
                 <div class="mt-8 space-y-7">
                     @foreach ($fully_powered as $product)
                         <a href="{{ route('learn-more', ['slug' => $product->slug]) }}"
-                            class="flex flex-row items-start gap-6">
+                            class="flex flex-row items-start gap-4 md:gap-6">
                             <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
-                                alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-64">
+                                alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-32 md:max-w-64">
                             <div>
                                 <div class="flex items-center gap-2">
                                     @if ($product->new)
@@ -54,16 +54,16 @@
                 </div>
             </div>
             <div class="">
-                <div class="space-y-2">
+                <div class="space-y-3">
                     <h4 class="text-5xl text-center">Plug-and-Play Hot Tubs</h4>
                     <p class="text-xl text-center">Plug it in and splash into serenity.</p>
                 </div>
                 <div class="mt-8 space-y-7">
                     @foreach ($plug_and_play as $product)
                         <a href="{{ route('learn-more', ['slug' => $product->slug]) }}"
-                            class="flex flex-row items-start gap-6">
+                            class="flex flex-row items-start gap-4 md:gap-6">
                             <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
-                                alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-64">
+                                alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-32 md:max-w-64">
                             <div>
                                 <div class="flex items-center gap-2">
                                     @if ($product->new)

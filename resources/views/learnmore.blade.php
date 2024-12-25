@@ -1,3 +1,11 @@
+<div class="grid-cols-1 hidden"></div>
+<div class="grid-cols-2 hidden"></div>
+<div class="grid-cols-3 hidden"></div>
+<div class="grid-cols-4 hidden"></div>
+<div class="grid-cols-5 hidden"></div>
+<div class="grid-cols-6 hidden"></div>
+<div class="grid-cols-7 hidden"></div>
+<div class="grid-cols-8 hidden"></div>
 <x-layout>
     <x-slot:title>
         The {{ Str::ucfirst($product->slug) }} ({{ $product->name }}) - Learn More
@@ -17,7 +25,7 @@
         <meta property="og:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
-        <meta property="og:site_name" content="{{ $name }}">
+        <meta property="og:site_name" content="{{ $appname }}">
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
@@ -27,58 +35,29 @@
         <meta name="twitter:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta name="twitter:site" content="{{ $twitter_link }}">
     </x-slot:meta>
-    <x-slot:headjs>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('.product-image-gallery').slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    // autoplay: true,
-                    // autoplaySpeed: 6000,
-                    // prevArrow: $("#prevArrow[data-slick='product-slick']"),
-                    // nextArrow: $("#nextArrow[data-slick='product-slick']")
-                });
-                $('.product-image-gallery-nav').slick({
-                    infinite: true,
-                    slidesToShow: 9,
-                    slidesToScroll: 9,
-                    asNavFor: '.product-image-gallery',
-                    // autoplay: true,
-                    // autoplaySpeed: 6000,
-                    // prevArrow: $("#prevArrow[data-slick='product-slick']"),
-                    // nextArrow: $("#nextArrow[data-slick='product-slick']")
-                });
-            });
-        </script>
-    </x-slot>
     {{-- Quick Intro --}}
     <x-frontend.intro />
     <main class="py-4 space-y-8">
-        <div class="px-24 grid grid-cols-2 gap-8">
-            <div class="sticky top-10">
-                <div class="product-image-gallery-nav">
-                    @foreach (range(1, 6) as $key => $d)
-                        <div class="inline-block">{{ $key }}</div>
-                    @endforeach
-                </div>
-                <div class="product-image-gallery overflow-hidden">
-                    @foreach (range(1, 4) as $key => $d)
-                        <a href="" class="inline-block">{{ $key }}</a>
-                    @endforeach
-                </div>
+        <div class="z-10 px-4 xl:px-24 grid md:grid-cols-2 items-start gap-x-8 gap-y-4 xl:pb-32">
+            <div class="block gap-2 md:hidden">
+                <a href="{{ route('hot-tubs') }}" class="text-hot-700 hover:underline underline-offset-2">All
+                    Products</a>
+                <span>/</span>
+                <span class="text-gray-600">The {{ Str::ucfirst($product->slug) }}</span>
             </div>
-            <div class="space-y-3">
+            <div class="xl:sticky top-0 py-4 h-auto">
+                <div id="product-image-gallery" data-images="{{ json_encode($product->images) }}"
+                    data-directory="{{ asset('/img/products/' . $product->slug . '/') }}"></div>
+            </div>
+            <div class="space-y-5 xl:py-12">
                 {{-- Breadcrumb --}}
-                <div class="flex gap-2">
-                    <a href="" class="text-hot-700 hover:underline underline-offset-2">All Products</a>
+                <div class="hidden gap-2 md:block">
+                    <a href="{{ route('hot-tubs') }}" class="text-hot-700 hover:underline underline-offset-2">All
+                        Products</a>
                     <span>/</span>
                     <span class="text-gray-600">The {{ Str::ucfirst($product->slug) }}</span>
                 </div>
+                {{-- Title & Caption --}}
                 <div>
                     <h1 class="text-3xl font-bold">The {{ Str::ucfirst($product->slug) }}</h1>
                     <div class="mt-2 text-sm font-mono font-normal text-gray-500">
@@ -89,6 +68,7 @@
                         <p>{{ $product->caption }}</p>
                     </div>
                 </div>
+                {{-- Description & Offer --}}
                 <div>
                     <p class="text-lg font-normal">
                         {{ $product->long_description }}
@@ -110,21 +90,26 @@
 
                     </ul>
                 </div>
-                <div>
-                    <h6 class="text-2xl font-semibold">Call us at {{ $telephone }} to learn about estimated delivery
-                        times,
-                        exclusive discounts, or similar models at incredible prices.</h6>
+                <x-frontend.cards />
+                <div class="space-y-12">
+                    <div>
+                        <h6 class="text-2xl font-semibold">Call us at {{ $telephone }} to learn about estimated
+                            delivery
+                            times,
+                            exclusive discounts, or similar models at incredible prices.</h6>
+                    </div>
+                    <p class="text-2xl italic">No need to wait—give us a call!</p>
                 </div>
-                <p class="text-2xl italic">No need to wait—give us a call!</p>
             </div>
         </div>
-        <div>
-            <section class="relative z-10 bg-hot-700 text-white pt-14 overflow-hidden">
-                <div class="absolute block w-full -top-2 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none bg-bottom"
-                    style="background-image: url('https://www.dothanhottubs.com/web_editor/shape/web_editor%2FWavy%2F12_001.svg?c1=%237FCDCF');">
+        <div class="relative z-20">
+            {{-- Value data --}}
+            <section class="relative z-10 bg-hot-700 text-white pt-8 overflow-hidden md:pt-14">
+                <div class="hidden absolute w-full -top-2 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none bg-bottom xl:block"
+                    style="background-image: url('{{ asset('/img/double_wavy.svg') }}');">
                     <h2></h2>
                 </div>
-                <div class="flex flex-row justify-center gap-x-24 items-center pb-16">
+                <div class="flex flex-wrap flex-col justify-center gap-x-14 gap-y-7 items-center pb-16 xl:gap-x-24 md:flex-row">
                     <div class="flex flex-col items-center justify-center ">
                         <p class="text-6xl font-medium">{{ $product->person_capacity }}</p>
                         <p class="text-lg">Person Capacity</p>
@@ -160,7 +145,7 @@
                 </div>
             </section>
             <section
-                class="w-full bg-hot-700 grid grid-cols-{{ count($product->features) }} gap-x-2 justify-ly px-24 py-10 ">
+                class="hidden w-full bg-hot-700 grid-cols-{{ count($product->features) }} gap-x-2 justify-ly px-24 py-10 xl:grid">
                 @foreach ($product->features as $feature)
                     <div class="flex flex-col items-start justify-start gap-y-3 text-center text-white">
                         <div class="mx-auto bg-cover bg-center bg-no-repeat w-44 h-44 rounded-full border-[5px] border-white"
@@ -173,11 +158,11 @@
                     </div>
                 @endforeach
             </section>
-            <div class="px-24 py-10 space-y-8">
+            <div class="px-4 py-4 space-y-8 md:px-8 xl:px-24 md:py-10">
                 {{-- Top Showcase --}}
                 <section>
                     @if ($product->top_showcase)
-                        <div class="grid grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                             @foreach ($product->top_showcase as $showcase)
                                 <img src="{{ asset('/img/products/showcase/' . $showcase) }}" alt=""
                                     class="rounded-md shadow-lg">
@@ -188,7 +173,7 @@
                 {{-- Product Details --}}
                 <section class="">
                     <div>
-                        <ul class="flex flex-wrap items-center gap-x-0.5 -mb-px font-medium text-center"
+                        <ul class="flex flex-wrap items-center gap-x-0.5 gap-y-2 font-medium text-center"
                             data-tabs-active-classes="bg-hot-700 text-white font-normal py-2"
                             data-tabs-inactive-classes="text-hot-700 font-normal py-1" id="product-tab"
                             data-tabs-toggle="product-tab-content" role="tablist">
@@ -254,7 +239,7 @@
                         </div>
                         <div class="hidden p-4" id="specifications" role="tabpanel"
                             aria-labelledby="specifications-tab">
-                            <div class="grid grid-cols-2 gap-24">
+                            <div class="grid grid-cols-1 gap-x-24 gap-y-14 md:grid-cols-2">
                                 <div class="space-y-2">
                                     <h2 class="text-3xl text-center">Features</h2>
                                     <table class="w-full text-sm text-left rtl:text-right text-gray-900">
@@ -305,7 +290,7 @@
                 {{-- Bottom Showcase --}}
                 <section>
                     @if ($product->bottom_showcase)
-                        <div class="grid grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                             @foreach ($product->bottom_showcase as $showcase)
                                 <img src="{{ asset('/img/products/showcase/' . $showcase) }}" alt=""
                                     class="rounded-md shadow-lg">
@@ -316,7 +301,7 @@
                 {{-- Owners Manual --}}
                 <section class="w-full flex items-center justify-center py-8">
                     <div
-                        class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-2 items-center gap-x-4">
+                        class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
                         <div>
                             <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
                         </div>
@@ -326,24 +311,24 @@
                                 you
                                 may download a
                                 copy here.</p>
-                            <a href="" download=""
+                            <a href="{{ asset('manual.pdf') }}" download="Owner's Manual"
                                 class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
                                 style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
                         </div>
                     </div>
                 </section>
             </div>
-            <div class="bg-gray-300 pt-8 pb-5 px-24">
+            <div class="bg-gray-300 pt-8 pb-5 px-4 sm:px-8 xl:px-24">
                 <p class="text-2xl">You might also be interested in...</p>
             </div>
-            <div class="px-24 py-10">
+            <div class="px-4 xl:px-24 py-10">
                 @if (count($similar) > 0)
-                    <div class="grid grid-cols-5 items-start gap-6 pt-20">
+                    <div class="grid grid-cols-1 items-start gap-x-6 gap-y-32 pt-20 sm:grid-cols-3 xl:grid-cols-5">
                         @foreach ($similar as $product)
                             <a target="_blank" href="{{ route('learn-more', ['slug' => $product->slug]) }}"
-                                class="relative border border-gray-200 rounded-lg px-3 py-3 w-full flex flex-col items-center">
+                                class="relative border border-gray-400 rounded-lg px-3 py-3 w-full flex flex-col items-center">
                                 <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
-                                    alt="First Image" class=" -mt-24 rounded-lg w-52">
+                                    alt="First Image" class="-mt-20 rounded-lg w-52">
                                 <div class="mt-2">
                                     <h5 class="text-lg text-center font-semibold">The
                                         {{ Str::ucfirst($product->slug) }}

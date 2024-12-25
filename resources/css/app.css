@@ -7,17 +7,31 @@
         @apply bg-red-500 hover:bg-red-600 transition-all duration-75 ease-in-out !text-white px-6 py-2 rounded-3xl;
     }
     .light-btn {
-        @apply bg-hot-500 px-6 py-3 transition-all duration-75 ease-in-out hover:bg-hot-500/55;
+        @apply bg-hot-600 px-6 py-3 transition-all duration-75 ease-in-out hover:bg-hot-600/55;
     }
     .center {
         @apply flex items-center justify-center flex-row;
     }
     .form-input {
-        @apply w-full !border !border-gray-300 !py-1 !px-2 rounded-lg outline-none focus:!border-none focus:!ring-4 !ring-hot-700/35;
+        @apply w-full !border !border-gray-300 !py-1 !px-2 !rounded-lg outline-none focus:!border-none focus:!ring-4 !ring-hot-700/35;
+    }
+    /* Image Gallery */
+    .image-gallery-thumbnail.active,
+    .image-gallery-thumbnail:focus,
+    .image-gallery-thumbnail:hover {
+        @apply !border-2 !border-hot-600;
+    }
+    .image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left.thumbnails-swipe-vertical {
+        @apply !hidden md:!inline-block;
+    }
+    .image-gallery-slide-wrapper.image-gallery-thumbnails-left,
+    .image-gallery-slide-wrapper.image-gallery-thumbnails-right {
+        /* @apply !w-full md:!w-3/4; */
+        @apply !w-full md:!w-calc;
     }
     /* Rich Text Editor */
     .rich-editor h1 {
-        @apply text-2xl font-semibold;
+        @apply text-2xl font-semibold !important;
     }
     .rich-editor h2 {
         @apply text-2xl font-medium !important;
@@ -38,7 +52,7 @@
         @apply list-decimal pl-4 !important;
     }
     .rich-editor ul {
-        @apply list-disc pl-4 !important;
+        @apply list-inside list-disc pl-4 whitespace-normal !important;
     }
     .rich-editor blockquote {
         @apply border-l-2 border-gray-500 ml-5 pl-2 text-gray-500 italic  !important;
@@ -46,7 +60,8 @@
     .rich-editor code {
         @apply inline-block font-mono bg-gray-300 p-0.5 my-1 !important;
     }
+    .rich-editor a,
     .rich-editor a span {
-        @apply font-mono underline underline-offset-2 text-blue-400 !important;
+        @apply hover:underline underline-offset-2 text-hot-700 hover:text-hot-900 !important;
     }
 }

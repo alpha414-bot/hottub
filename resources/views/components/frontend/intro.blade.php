@@ -1,16 +1,16 @@
-<section class="grid grid-cols-4 gap-x-1 text-white font-medium">
-    <div class="bg-hot-700 text-xl px-24 py-4 text-center">
-        <p><span class="font-bold">FREE</span> HOT TUB DELIVERY INCLUDED</p>
+<section class="grid grid-cols-1 gap-x-1 text-2xl text-center text-white font-medium md:grid-cols-4">
+    <div class="bg-hot-700 px-2 py-4 lg:px-20">
+        <p class="text-2xl"><span class="font-bold">FREE</span> HOT TUB DELIVERY INCLUDED</p>
     </div>
-    <div class="bg-hot-700 text-xl px-24 py-4 text-center">
+    <div class="bg-hot-700 px-2 py-4 lg:px-20">
         <p><span class="font-bold">FREE</span> HOT TUB COVER AND STEPS</p>
     </div>
-    <div class="bg-hot-700 text-xl px-24 py-4 text-center">
-        <a href="" class="hover:underline hover:underline-offset-2 decoration-2 decoration-black">EXTENDED
-            WARRANTY PLANS</a>
+    <div class="bg-hot-700 px-2 py-4 lg:px-20">
+        <p class="">EXTENDED
+            WARRANTY PLANS</p>
     </div>
-    <div class="bg-hot-700 text-xl px-24 py-4 text-center">
-        <a href="" class="hover:underline hover:underline-offset-2 decoration-2 decoration-black">FINANCING
-            PLANS AVAILABLE</a>
+    <div class="bg-hot-700 px-2 py-4 lg:px-20">
+        <p class="">FINANCING
+            PLANS AVAILABLE</p>
     </div>
 </section>

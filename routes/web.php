@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Stevebauman\Location\Facades\Location;
@@ -9,9 +11,14 @@ use Stevebauman\Location\Facades\Location;
 // Homepage
 Route::get('/', function () {
     $my_products = Product::select("slug", "images", "measurement", "specifications");
+    $animals = Product::select("slug")->get();
+    $animals = array_map(function ($animal) {
+        return Str::slug($animal["slug"]);
+    }, $animals->toArray());
     return view('home', [
         "products_intro" => $my_products->take(5)->get(),
-        "all_products" => $my_products->whereIn('slug', ['elephant', 'wolf', 'tiger', 'jaguar', 'hawk', 'falcon'])->get()
+        "all_products" => $my_products->whereIn('slug', ['elephant', 'wolf', 'tiger', 'jaguar', 'hawk', 'falcon'])->get(),
+        "animals" => $animals
     ]);
 })->name('home');
 
@@ -47,6 +54,52 @@ Route::get('/contact-us', function () {
     ]);
 })->name('contact-us');
 
+Route::post("/contact-us", function (Request $request) {
+    $name = getenv('APP_NAME');
+    $request->validate([
+        'subject' => 'required|string',
+        'name' => 'required|string',
+        'phone' => 'string',
+        'email' => 'required|email',
+        'question' => 'required|string',
+    ]);
+    // Send email
+    $data = $request->all();
+    Mail::send('mail', $data, function ($message) use ($data, $name) {
+        $message->to(getenv('MAIL_FROM_ADDRESS'), getenv('APP_NAME'))
+            ->subject($name . " warehouse - " . $data['subject'] . " from " . $data['name']);
+    });
+    return redirect()->back()->with('success', 'Your message has been sent successfully');
+})->name("contact-us");
+
+// About Us Page
+Route::get('/about-us', function () {
+    return view("aboutus");
+})->name('about-us');
+
+// Privacy Policy Page
+Route::get('/privacy-policy', function () {
+    $name = getenv('APP_NAME');
+    $termsOfService = file_get_contents(resource_path('terms_of_service.txt'));
+    $termsOfService = str_replace('{{$name}}', $name, $termsOfService);
+    $howwecollectAndUse = file_get_contents(resource_path('how_we_collect_and_use_your_personal_information.txt'));
+    $howwecollectAndUse = str_replace('{{$name}}', $name, $howwecollectAndUse);
+    $useOfCookies = file_get_contents(resource_path('use_of_cookies.txt'));
+    $useOfCookies = str_replace('{{$name}}', $name, $useOfCookies);
+    $thirdPartyWebsites = file_get_contents(resource_path('third_party_websites.txt'));
+    $thirdPartyWebsites = str_replace('{{$name}}', $name, $thirdPartyWebsites);
+    $yourRightsAndChoice = file_get_contents(resource_path('your_rights_and_choice.txt'));
+    $yourRightsAndChoice = str_replace('{{$name}}', $name, $yourRightsAndChoice);
+    return view("privacypolicy", [
+        "policies" => [
+            "Terms of service" => $termsOfService,
+            "How we collect and use your personal information" => $howwecollectAndUse,
+            "Use of Cookies" => $useOfCookies,
+            "Third party websites and links" => $thirdPartyWebsites,
+            "Your rights and choice" => $yourRightsAndChoice
+        ]
+    ]);
+})->name('privacy-policy');
 
 Route::get('test', function () {
     $position = Location::get();

@@ -22,29 +22,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        View::share("animals", ["falcon", "hawk", "jaguar", "tiger", "wolf", "elephant"]);
-        View::share('name', 'Gulfsouthspas');
-        // View::share('logo', asset("/img/gulfsouthspas.png"));
-        View::share('logo', "https://www.dothanhottubs.com/web/image/website/1/logo/Dothan%20Hot%20Tub%20Warehouse?unique=b364aae");
-        View::share('address', "361 Nypro Lane, Dothan, Alabama 36305");
-        View::share("map_address", "https://maps.app.goo.gl/VYoaLcADvwPxkThd9");
-        View::share("telephone", "(334) 333-3211");
-        View::share("mail", "contact@dothanhottubs.com");
-        View::share("facebook_link", "");
-        View::share("linkedin_link", "");
-        View::share("instagram_link", "");
-        View::share("twitter_link", "");
-        View::share('products', [
-            [
-                "type" => "the_elephant",
-                "name" => "",
-                "short_description" => "",
-                "long_description" => "",
-                "images" => [
-                    ""
-                ],
-
-            ]
-        ]);
+        View::share('appname', getenv('APP_NAME'));
+        View::share('logo', asset("/img/logo.jpg"));
+        View::share('address', getenv("ADDRESS"));
+        View::share("map_address", getenv("MAP_ADDRESS"));
+        View::share("telephone", getenv("TELEPHONE"));
+        View::share("mail", getenv("MAIL"));
+        View::share("facebook_link", getenv("FACEBOOK_LINK"));
+        View::share("linkedin_link", getenv("LINKEDIN_LINK"));
+        View::share("instagram_link", getenv("INSTAGRAM_LINK"));
+        View::share("twitter_link", getenv("TWITTER_LINK"));
     }
 }
