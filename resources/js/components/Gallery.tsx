@@ -1,5 +1,6 @@
+import FsLightbox from "fslightbox-react";
 import _ from "lodash";
-import React, { FC, useMemo } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
@@ -7,9 +8,18 @@ interface GalleryInterface {
     img: any;
     directory: any;
     thumbnailPosition?: "top" | "right" | "bottom" | "left" | undefined;
+    lightbox?: any;
 }
 
-const Gallery: FC<GalleryInterface> = ({ img, directory, thumbnailPosition }) => {
+const Gallery: FC<GalleryInterface> = ({
+    img,
+    directory,
+    thumbnailPosition,
+    lightbox,
+}) => {
+    const [toggler, setToggler] = useState(false);
+    const [visible, setVisible] = useState(false);
+
     const images = useMemo(() => {
         const parse_data = JSON.parse(img);
         if (directory) {
@@ -20,6 +30,21 @@ const Gallery: FC<GalleryInterface> = ({ img, directory, thumbnailPosition }) =>
         }
         return parse_data;
     }, [img, directory]);
+
+    useEffect(() => {
+        const element = document.querySelectorAll(".mynavbar");
+        if (element) {
+            if (visible) {
+                element.forEach((el) => {
+                    el.classList.remove("z-40");
+                });
+            } else {
+                element.forEach((el) => {
+                    el.classList.add("z-40");
+                });
+            }
+        }
+    }, [visible]);
 
     return (
         <div className="container mx-auto">
@@ -32,7 +57,12 @@ const Gallery: FC<GalleryInterface> = ({ img, directory, thumbnailPosition }) =>
                     thumbnailPosition,
                 }}
                 renderItem={({ original }) => (
-                    <div className="relative flex items-start justify-start md:mx-6">
+                    <div
+                        onClick={() => {
+                            setToggler(!toggler);
+                        }}
+                        className="relative flex items-start justify-start md:mx-6"
+                    >
                         <img src={original} alt="" className="w-full" />
                     </div>
                 )}
@@ -89,6 +119,17 @@ const Gallery: FC<GalleryInterface> = ({ img, directory, thumbnailPosition }) =>
                     </button>
                 )}
             />
+            {lightbox && (
+                <div className="relative z-50">
+                    <FsLightbox
+                        toggler={!!toggler}
+                        onOpen={() => setVisible(true)}
+                        onClose={() => setVisible(false)}
+                        sources={_.map(images, "original")}
+                        thumbs={_.map(images, "thumbnail")}
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -8,19 +8,19 @@
 <div class="grid-cols-8 hidden"></div>
 <x-layout>
     <x-slot:title>
-        The {{ Str::ucfirst($product->slug) }} ({{ $product->name }}) - Learn More
+        {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}- Learn More
     </x-slot:title>
     <x-slot:meta>
         <!-- SEO Meta Tags -->
         <meta name="description"
-            content="Discover more about our  {{ Str::ucfirst($product->slug) }} ({{ $product->name }}) hot tubs. Learn about features, benefits, and why our hot tubs are the best choice for relaxation and wellness.">
+            content="Discover more about our {{ $product->name }} - The {{ Str::ucfirst($product->slug) }} hot tubs. Learn about features, benefits, and why our hot tubs are the best choice for relaxation and wellness.">
         <meta name="keywords"
             content="{{ $product->slug }}, {{ $product->name }}, {{ $product->type }}, hot tubs, relaxation, wellness, luxury, features, benefits">
         <meta name="author" content="Your Company Name">
 
         <!-- Open Graph Meta Tags -->
         <meta property="og:title"
-            content="Learn More About The {{ Str::ucfirst($product->slug) }} ({{ $product->name }})">
+            content="Learn More About{{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
         <meta property="og:description" content="{{ $product->short_description }}">
         <meta property="og:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta property="og:url" content="{{ url()->current() }}">
@@ -30,7 +30,7 @@
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title"
-            content="Learn More About The {{ Str::ucfirst($product->slug) }} ({{ $product->name }})">
+            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
         <meta name="twitter:description" content="{{ $product->short_description }}">
         <meta name="twitter:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta name="twitter:site" content="{{ $twitter_link }}">
@@ -43,11 +43,12 @@
                 <a href="{{ route('hot-tubs') }}" class="text-hot-700 hover:underline underline-offset-2">All
                     Products</a>
                 <span>/</span>
-                <span class="text-gray-600">The {{ Str::ucfirst($product->slug) }}</span>
+                <span class="text-gray-600">{{ $product->name }}</span>
             </div>
-            <div class="xl:sticky top-0 py-4 h-auto">
-                <div id="product-image-gallery" data-images="{{ json_encode($product->images) }}"
-                    data-directory="{{ asset('/img/products/' . $product->slug . '/') }}" data-thumbnail-position="left"></div>
+            <div class="xl:sticky top-0 py-4 h-auto z-30">
+                <div data-lightbox="true" id="product-image-gallery" data-images="{{ json_encode($product->images) }}"
+                    data-directory="{{ asset('/img/products/' . $product->slug . '/') }}"
+                    data-thumbnail-position="left"></div>
             </div>
             <div class="space-y-5 xl:py-12">
                 {{-- Breadcrumb --}}
@@ -55,11 +56,12 @@
                     <a href="{{ route('hot-tubs') }}" class="text-hot-700 hover:underline underline-offset-2">All
                         Products</a>
                     <span>/</span>
-                    <span class="text-gray-600">The {{ Str::ucfirst($product->slug) }}</span>
+                    <span class="text-gray-600">{{ $product->name }}</span>
                 </div>
                 {{-- Title & Caption --}}
                 <div>
-                    <h1 class="text-3xl font-bold">The {{ Str::ucfirst($product->slug) }}</h1>
+                    <h1 class="text-4xl font-bold">{{ $product->name }}</h1>
+                    <h1 class="text-lg font-semibold">The {{ Str::ucfirst($product->slug) }}</h1>
                     <div class="mt-2 text-sm font-mono font-normal text-gray-500">
                         <p class="">
                             {{ $product->measurement }} for up to
@@ -326,14 +328,15 @@
                 @if (count($similar) > 0)
                     <div class="grid grid-cols-1 items-start gap-x-6 gap-y-32 pt-20 sm:grid-cols-3 xl:grid-cols-5">
                         @foreach ($similar as $product)
-                            <a target="_blank" href="{{ route('learn-more', ['slug' => $product->slug]) }}"
+                            <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
                                 class="relative border border-gray-400 rounded-lg px-3 py-3 w-full flex flex-col items-center">
                                 <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
                                     alt="First Image" class="-mt-20 rounded-lg w-52">
                                 <div class="mt-2">
-                                    <h5 class="text-lg text-center font-semibold">The
-                                        {{ Str::ucfirst($product->slug) }}
-                                        <h5 class="text-base text-center font-medium">({{ $product->name }})
+                                    <h5 class="text-lg text-center font-semibold">
+                                        {{ $product->name }}
+                                        <h5 class="text-base text-center font-medium">The
+                                            {{ Str::ucfirst($product->slug) }}
                                         </h5>
                                         <p class="text-center ">{{ $product->measurement }}</p>
                                         <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More

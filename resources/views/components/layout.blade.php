@@ -46,13 +46,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.tsx'])
 </head>
 
-<body class="font-sans antialiased relative">
+<body class="font-sans antialiased relative p-0 m-0">
     @if (!isset($notemplate))
         {{-- Announcement --}}
         <div
             class="bg-hot-700 py-3 px-4 text-center grid grid-cols-1 gap-y-2 items-center md:grid-cols-[1fr_auto] md:px-16">
             <div class="grow w-full text-white text-base font-medium font-sans">
-                5-Star Google Reviews - Alabama's very own, BBB Accredited, {{ $appname }} Warehouse
+                5-Star Google Reviews - Alabama's very own, BBB Accredited, {{ $appname }}
             </div>
             <div class="flex items-center justify-center gap-x-4">
                 <a href="{{ $facebook_link }}">
@@ -76,9 +76,13 @@
         {{-- Footer --}}
         <x-frontend.footer />
     @endif
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @isset($headjs)
         {{ $headjs }}
     @endisset
+    <script src="{{ asset('packages/fslightbox/fslightbox.js') }}"></script>
 </body>
 
 </html>

@@ -16,7 +16,7 @@
         <meta name="twitter:image" content="{{ asset('images/aboutus.jpg') }}">
     </x-slot:meta>
     <main class="px-4 py-12 xl:px-24 xl:py-24 space-y-24">
-        <h1 class="text-5xl font-bold text-center">Why Choose {{ $appname }} Warehouse?</h1>
+        <h1 class="text-5xl font-bold text-center">Why Choose Hydro Hot Tubs {{ $appname }} Outdoor Living?</h1>
         <div class="grid xl:grid-cols-[1.2fr_1fr] gap-12">
             <div class="space-y-6 text-lg">
                 <div class="space-y-2">
@@ -24,7 +24,8 @@
                     <p class="font- font-sans">Being a local company means we understand the unique needs of our
                         community.
                         With our roots firmly
-                        planted in Dothan, we are dedicated to providing personalized service to our neighbors, making
+                        planted in the Southeast, we are dedicated to providing personalized service to our
+                        neighbors, making
                         luxury accessible and affordable for <span class="italic">everyone.</span></p>
                 </div>
                 <div class="space-y-2">
@@ -34,7 +35,7 @@
                         our selection to long after your hot tub is in place, we're here to assist and ensure your
                         complete satisfaction.
                         <br /></br />
-                        Choosing Dothan Hot Tub Warehouse is simple. It means choosing a local partner dedicated to
+                        Choosing {{ $appname }} is simple. It means choosing a local partner dedicated to
                         delivering more than just hot tubs - we deliver an unmatched experience.
                     </p>
                     <p>
@@ -51,8 +52,8 @@
                 </div>
             </div>
             <div class="order-first xl:order-last">
-                <img src="{{asset('/img/aboutus.jpg')}}"
-                    alt="About Us Image" class="w-full object-cover animate-slidedown">
+                <img src="{{ asset('/img/aboutus.jpg') }}" alt="About Us Image"
+                    class="w-full object-cover animate-slidedown">
             </div>
         </div>
     </main>

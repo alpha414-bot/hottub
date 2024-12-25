@@ -1,4 +1,4 @@
-<nav class="sticky top-0 z-40 bg-white md:relative">
+<nav class="mynavbar sticky -top-0.5 z-40 bg-white md:relative">
     <div class="py-2 flex justify-between px-4 items-center border-b border-gray-300 lg:px-24">
         <a href="{{ route('home') }}">
             <img src={{ $logo }} alt="{{ $appname }} Logo"
@@ -16,7 +16,7 @@
     </div>
 </nav>
 <div
-    class="sticky hidden z-40 top-0 bg-white justify-between px-4 lg:px-24 items-center shadow-md shadow-gray-500 md:flex">
+    class="mynavbar sticky hidden z-40 -top-0.5 bg-white justify-between px-4 lg:px-24 items-center shadow-md shadow-gray-500 md:flex">
     <ul class="flex items-center gap-3 text-gray-600 py-1.5">
         <li><a href="{{ route('home') }}"
                 class="{{ Route::currentRouteName() === 'home' ? 'bg-hot-700 text-white' : '' }} py-2 px-4 rounded-md">Home</a>
@@ -48,7 +48,7 @@
             </svg>
         </button>
     </div>
-    <div class="grow h-full flex flex-col justify-between pb-8 ">
+    <div class="grow h-full flex flex-col justify-between pb-24 ">
         <ul class="flex flex-col items-stretch gap-6 text-gray-600 px-3 font-medium">
             <li><a href="{{ route('home') }}"
                     class="{{ Route::currentRouteName() === 'home' ? 'bg-hot-700 text-white block' : '' }} py-2 px-4 rounded-md">Home</a>

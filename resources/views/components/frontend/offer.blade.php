@@ -5,8 +5,4 @@
     <p class="text-xl text-center md:text-3xl">Our local hot tub experts ensure a hassle-free curbside delivery at no
         additional cost to
         you, allowing you to begin your relaxation journey even before your hot tub arrives.</p>
-    <p class="text-base text-center md:px-32">*Other delivery options available for most customers; fees may apply and
-        are calculated at checkout.
-        Additional services not included. See our <a href="javascript:void(0)" class="text-hot-700 hover:underline">Shipping
-            Policy</a> for details. </p>
 </section>

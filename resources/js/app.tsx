@@ -15,8 +15,9 @@ if (document.getElementById("product-image-gallery")) {
     const thumbnailPosition = (element?.getAttribute(
         "data-thumbnail-position"
     ) || "bottom") as any;
+    const lightbox = element?.getAttribute("data-lightbox") || false;
     ReactDOM.render(
-        <Gallery {...{ img, directory, thumbnailPosition }} />,
+        <Gallery {...{ img, directory, thumbnailPosition, lightbox }} />,
         document.getElementById("product-image-gallery")
     );
 }

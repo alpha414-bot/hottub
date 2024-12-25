@@ -20,9 +20,6 @@
         {{-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> --}}
     </x-slot>
     <x-slot:headjs>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script>
             $(document).ready(function() {
@@ -62,13 +59,13 @@
     <section
         class="mt-6 grid grid-cols-1 items-stretch justify-between gap-x-6 gap-y-12 px-6 py-12 lg:px-32 md:grid-cols-3 lg:grid-cols-5">
         @foreach ($products_intro as $product)
-            <a href="{{ route('learn-more', ['slug' => $product->slug]) }}"
+            <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
                 class="flex flex-col items-center justify-between">
                 <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
-                    alt="The {{ Str::ucfirst($product->slug) }} thumbnail">
+                    alt="The {{ $product->name }} image">
                 {{-- <div class="mt-1 flex flex-col items-center justify-start md:mt-4"> --}}
                 <div>
-                    <p class="text-3xl text-center font-normal">The {{ Str::ucfirst($product->slug) }}</p>
+                    <p class="text-3xl text-center font-normal">{{ $product->name }}</p>
                     <p class="text-base text-center font-normal">{{ $product->measurement }}
                         {{ Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration']) }}
                     </p>
@@ -123,17 +120,16 @@
                     class="absolute z-30 p-2 top-1/2 right-8 bg-white shadow-md rounded-full">
                     <x-feathericon-arrow-right class="text-lg" />
                 </button>
-                <div class="product-slick relative space-x-4 overflow-hidden">
+                <div class="product-slick relative overflow-hidden">
                     @foreach ($all_products as $product)
-                        <a href="{{ route('learn-more', ['slug' => $product->slug]) }}"
+                        <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
                             class="inline-block relative p-4">
                             <div class="relative">
                                 <img src="{{ asset('/img/products/showcase/' . $product->slug . '_main_showcase.jpg') }}"
                                     alt="First Image" class="shadow-md shadow-gray-400">
                                 <div
                                     class="absolute cursor-pointer bottom-2 left-2 text-lg bg-hot-700/75 text-white rounded-[2rem] px-6 py-2 hover:text-gray-300">
-                                    The
-                                    {{ Str::ucfirst($product->slug) }}</div>
+                                    {{ $product->name }}</div>
                             </div>
                         </a>
                     @endforeach
@@ -150,13 +146,15 @@
                 <p class="text-3xl text-white text-center md:text-5xl">Meet with one of our
                     representatives
                     today!</p>
-                <p class="text-2xl text-white text-center md:text-4xl">Schedule a phone consultation at a time that's convenient for
+                <p class="text-2xl text-white text-center md:text-4xl">Schedule a phone consultation at a time that's
+                    convenient for
                     you.</p>
             </div>
             <div class="px-4 md:-ms-10">
-                <button class="bg-hot-700 py-3 px-12 rounded-[3rem] text-3xl text-white tracking-wide">Schedule a
+                <a href="{{ route('contact-us') }}"
+                    class="block bg-hot-700 py-3 px-12 rounded-[3rem] text-3xl text-white tracking-wide">Schedule a
                     <br class="hidden lg:block" />
-                    Consultation</button>
+                    Consultation</a>
             </div>
         </div>
     </section>
@@ -168,12 +166,13 @@
         </div>
         <div class="relative space-y-12">
             <div class="space-y-6md:px-16">
-                <h2 class="text-5xl text-center text-hot-700 md:text-7xl">YOUR <span class="font-bold">TRUSTED</span> LOCAL SOURCE
+                <h2 class="text-5xl text-center text-hot-700 md:text-7xl">YOUR <span class="font-bold">TRUSTED</span>
+                    LOCAL SOURCE
                 </h2>
                 <p class="text-gray-700 italic text-4xl text-center">Proudly Serving Alabama,
                     Georgia, and
                     North Florida</p>
-                <p class="text-gray-900 text-xl text-center tracking-tighter">With Dothan Hot Tub Warehouse, you can
+                <p class="text-gray-900 text-xl text-center tracking-tighter">With {{ $appname }}, you can
                     start
                     relaxing in no time. As your trusted local source for all
                     things hot tub, we're here to help you find the perfect hot tub for your family. Enjoy superior
@@ -242,17 +241,18 @@
                 </div>
             </div>
         </div>
-        <div class="relative z-20 grid grid-cols-3 gap-x-4 gap-y-4 py-8 px-4 lg:-mt-[5%] lg:grid-cols-7 lg:gap-x-14 md:gap-y-8 lg:px-32 lg:py-0">
+        <div
+            class="relative z-20 grid grid-cols-3 gap-x-4 gap-y-4 py-8 px-4 lg:-mt-[5%] lg:grid-cols-7 lg:gap-x-14 md:gap-y-8 lg:px-32 lg:py-0">
             @foreach ($animals as $animal)
-                <div class="space-y-7">
-                    <img src="{{ asset('img/products/icons/' . $animal . '.jpg') }}" alt="{{ $animal }} Logo"
-                        class="rounded-full" />
+                <div class="space-y-4">
+                    <img src="{{ asset('/img/products/' . $animal->slug . '/' . $animal->images[0]) }}"
+                        alt="{{ $animal->name }} Logo" class="" />
                     <a target="_blank"
                         href="{{ route('learn-more', [
-                            'slug' => $animal,
+                            'name' => $animal->name,
+                            'slug' => $animal->slug,
                         ]) }}"
-                        class="block text-center py-1 px-2 bg-red-700 text-white rounded-2xl">The
-                        {{ Str::ucfirst($animal) }}</a>
+                        class="block font-semibold text-center py-1 px-2 bg-red-700 text-white rounded-2xl">{{ $animal->name }}</a>
                 </div>
             @endforeach
         </div>

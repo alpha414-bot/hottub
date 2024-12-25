@@ -4,7 +4,7 @@
     @endslot
     <main class="space-y-8">
         <div class="bg-hot-700/20 w-full py-7 flex items-center justify-center">
-            <img src="{{ $logo }}" alt="{{ $appname }} Warehouse logo" class="max-w-52">
+            <img src="{{ $logo }}" alt="{{ $appname }} logo" class="max-w-52">
         </div>
         <div class="space-y-2">
             <h2 class="text-4xl font-bold text-center">New Contact</h2>
