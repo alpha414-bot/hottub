@@ -15,8 +15,7 @@
         <meta name="description"
             content="Discover more about our {{ $product->name }} - The {{ Str::ucfirst($product->slug) }} hot tubs. Learn about features, benefits, and why our hot tubs are the best choice for relaxation and wellness.">
         <meta name="keywords"
-            content="{{ $product->slug }}, {{ $product->name }}, {{ $product->type }}, hot tubs, relaxation, wellness, luxury, features, benefits">
-        <meta name="author" content="Your Company Name">
+            content="{{ $product->slug }}, {{ $product->name }}, {{ $product->type }}, hot tubs, relaxation, wellness, luxury, features, benefits"/>
 
         <!-- Open Graph Meta Tags -->
         <meta property="og:title"
@@ -61,7 +60,6 @@
                 {{-- Title & Caption --}}
                 <div>
                     <h1 class="text-4xl font-bold">{{ $product->name }}</h1>
-                    <h1 class="text-lg font-semibold">The {{ Str::ucfirst($product->slug) }}</h1>
                     <div class="mt-2 text-sm font-mono font-normal text-gray-500">
                         <p class="">
                             {{ $product->measurement }} for up to
@@ -92,7 +90,6 @@
 
                     </ul>
                 </div>
-                <x-frontend.cards />
                 <div class="space-y-12">
                     <div>
                         <h6 class="text-2xl font-semibold">Call us at {{ $telephone }} to learn about estimated
@@ -112,63 +109,93 @@
                     <h2></h2>
                 </div>
                 <div
-                    class="flex flex-wrap flex-col justify-center gap-x-14 gap-y-7 items-center pb-16 xl:gap-x-24 md:flex-row">
-                    <div class="flex flex-col items-center justify-center ">
-                        <p class="text-6xl font-medium">{{ $product->person_capacity }}</p>
-                        <p class="text-lg">Person Capacity</p>
-                    </div>
-                    <div class="flex flex-col items-center justify-center ">
-                        <p class="text-6xl font-medium">{{ $product->specifications['features']['Hydrotherapy Jets'] }}
-                        </p>
-                        <p class="text-lg">Hydrotherapy Jets</p>
-                    </div>
-                    <div class="flex flex-col items-center justify-center ">
-                        <p class="text-6xl font-medium">{{ $product->specifications['features']['Therapy Pumps'] }}
-                        </p>
-                        <p class="text-lg">Therapy Pumps</p>
-                    </div>
-                    <div class="flex flex-col items-center justify-center ">
-                        <p class="text-6xl font-medium">{{ $product->specifications['technical']['Water Capacity'] }}
-                        </p>
-                        <p class="text-lg">Gallons</p>
-                    </div>
+                    class="flex flex-wrap flex-col justify-center gap-x-14 gap-y-7 items-center pb-16 xl:gap-x-24 md:flex-row md:justify-evenly">
+                    @isset($product->person_capacity)
+                        <div class="flex flex-col items-center justify-center ">
+                            <p class="text-6xl font-medium">{{ $product->person_capacity }}</p>
+                            <p class="text-lg">Person Capacity</p>
+                        </div>
+                    @endisset
+                    @if ($product->type === 'plug-and-play-hot-tubs' or $product->type == 'full-powered-hot-tubs')
+                        @isset($product->specifications['features']['Hydrotherapy Jets'])
+                            <div class="flex flex-col items-center justify-center ">
+                                <p class="text-6xl font-medium">
+                                    {{ $product->specifications['features']['Hydrotherapy Jets'] }}
+                                </p>
+                                <p class="text-lg">Hydrotherapy Jets</p>
+                            </div>
+                        @endisset
+                    @elseif($product->type == 'cold-spas')
+                        @isset($product->chilled_temperature)
+                            <div class="flex flex-col items-center justify-center ">
+                                <p class="text-6xl font-medium">
+                                    {{ $product->chilled_temperature }}
+                                </p>
+                                <p class="text-lg">Chilled Temperature</p>
+                            </div>
+                        @endisset
+                    @endif
+                    @isset($product->specifications['features']['Therapy Pumps'])
+                        <div class="flex flex-col items-center justify-center ">
+                            <p class="text-6xl font-medium">{{ $product->specifications['features']['Therapy Pumps'] }}
+                            </p>
+                            <p class="text-lg">Therapy Pumps</p>
+                        </div>
+                    @endisset
+                    @isset($product->specifications['technical']['Water Capacity'])
+                        <div class="flex flex-col items-center justify-center ">
+                            <p class="text-6xl font-medium">{{ $product->specifications['technical']['Water Capacity'] }}
+                            </p>
+                            <p class="text-lg">Gallons</p>
+                        </div>
+                    @endisset
+
                     @if ($product->type === 'full-powered-hot-tubs')
-                        <div class="flex flex-col items-center justify-center ">
-                            <p class="text-6xl font-medium">{{ $product->fully_powered }}
-                            </p>
-                            <p class="text-lg">Fully Powered</p>
-                        </div>
-                    @elseif ($product->type === 'plug-and-play-hot-tubs')
-                        <div class="flex flex-col items-center justify-center ">
-                            <p class="text-6xl font-medium">{{ $product->plug_and_play }}
-                            </p>
-                            <p class="text-lg">Plug-and-Play</p>
-                        </div>
+                        @isset($product->fully_powered)
+                            <div class="flex flex-col items-center justify-center ">
+                                <p class="text-6xl font-medium">{{ $product->fully_powered }}
+                                </p>
+                                <p class="text-lg">Fully Powered</p>
+                            </div>
+                        @endisset
+                    @elseif ($product->type === 'plug-and-play-hot-tubs' or $product->type == 'cold-spas')
+                        @isset($product->plug_and_play)
+                            <div class="flex flex-col items-center justify-center ">
+                                <p class="text-6xl font-medium">{{ $product->plug_and_play }}
+                                </p>
+                                <p class="text-lg">Plug-and-Play</p>
+                            </div>
+                        @endisset
                     @endif
                 </div>
             </section>
-            <section
-                class="hidden w-full bg-hot-700 grid-cols-{{ count($product->features) }} gap-x-2 justify-ly px-24 py-10 xl:grid">
-                @foreach ($product->features as $feature)
-                    <div class="flex flex-col items-start justify-start gap-y-3 text-center text-white">
-                        <div class="mx-auto bg-cover bg-center bg-no-repeat w-44 h-44 rounded-full border-[5px] border-white"
-                            style="background-image: url('{{ asset('/img/products/featuring/' . $feature['img']) }}')">
+            @if (count($product->features) > 0)
+                <section
+                    class="hidden w-full bg-hot-700 grid-cols-{{ count($product->features) }} gap-x-2 justify-ly px-24 py-10 xl:grid">
+                    @foreach ($product->features as $feature)
+                        <div class="flex flex-col items-start justify-start gap-y-3 text-center text-white">
+                            <div class="mx-auto bg-cover bg-center bg-no-repeat w-44 h-44 rounded-full border-[5px] border-white"
+                                style="background-image: url('{{ asset('/img/products/featuring/' . $feature['img']) }}')">
+                            </div>
+                            <div class="mt-2 space-y-1 px-3">
+                                <p class="text-2xl font-medium">{{ $feature['title'] }}</p>
+                                <p class="hidde whitespace-pre-wrap">{{ $feature['description'] }}</p>
+                            </div>
                         </div>
-                        <div class="mt-2 space-y-1 px-3">
-                            <p class="text-2xl font-medium">{{ $feature['title'] }}</p>
-                            <p class="hidde whitespace-pre-wrap">{{ $feature['description'] }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </section>
+                    @endforeach
+                </section>
+            @endif
             <div class="px-4 py-4 space-y-8 md:px-8 xl:px-24 md:py-10">
                 {{-- Top Showcase --}}
                 <section>
                     @if ($product->top_showcase)
                         <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                             @foreach ($product->top_showcase as $showcase)
-                                <img src="{{ asset('/img/products/showcase/' . $showcase) }}" alt=""
-                                    class="rounded-md shadow-lg">
+                                <a href="{{ asset('/img/products/showcase/' . $showcase) }}"
+                                    data-fslightbox="top_showcase">
+                                    <img src="{{ asset('/img/products/showcase/' . $showcase) }}" alt=""
+                                        class="rounded-md shadow-lg">
+                                </a>
                             @endforeach
                         </div>
                     @endif
@@ -288,38 +315,44 @@
                         </div>
                     </div>
                 </section>
-                {{-- Offer --}}
-                <x-frontend.offer />
-                {{-- Bottom Showcase --}}
-                <section>
-                    @if ($product->bottom_showcase)
-                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-                            @foreach ($product->bottom_showcase as $showcase)
-                                <img src="{{ asset('/img/products/showcase/' . $showcase) }}" alt=""
-                                    class="rounded-md shadow-lg">
-                            @endforeach
+                @if ($product->type === 'plug-and-play-hot-tubs' or $product->type == 'full-powered-hot-tubs')
+                    {{-- Offer --}}
+                    <x-frontend.offer />
+                    {{-- Bottom Showcase --}}
+                    <section>
+                        @if ($product->bottom_showcase)
+                            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                                @foreach ($product->bottom_showcase as $showcase)
+                                    <a href="{{ asset('/img/products/showcase/' . $showcase) }}"
+                                        data-fslightbox="bottom_showcase">
+                                        <img src="{{ asset('/img/products/showcase/' . $showcase) }}" alt=""
+                                            class="rounded-md shadow-lg">
+                                    </a>
+                                @endforeach
+                            </div>
+                        @endif
+                    </section>
+                    {{-- Owners Manual --}}
+                    <section class="w-full flex items-center justify-center py-8">
+                        <div
+                            class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
+                            <div>
+                                <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
+                            </div>
+                            <div>
+                                <p class="text-4xl">Owner's Manual</p>
+                                <p class="text-lg">A copy of the Spa Owner's Manual will be delivered with the hot tub.
+                                    Or,
+                                    you
+                                    may download a
+                                    copy here.</p>
+                                <a href="{{ asset('manual.pdf') }}" download="Owner's Manual"
+                                    class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
+                                    style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
+                            </div>
                         </div>
-                    @endif
-                </section>
-                {{-- Owners Manual --}}
-                <section class="w-full flex items-center justify-center py-8">
-                    <div
-                        class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
-                        <div>
-                            <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
-                        </div>
-                        <div>
-                            <p class="text-4xl">Owner's Manual</p>
-                            <p class="text-lg">A copy of the Spa Owner's Manual will be delivered with the hot tub. Or,
-                                you
-                                may download a
-                                copy here.</p>
-                            <a href="{{ asset('manual.pdf') }}" download="Owner's Manual"
-                                class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
-                                style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                @endif
             </div>
             <div class="bg-gray-300 pt-8 pb-5 px-4 sm:px-8 xl:px-24">
                 <p class="text-2xl">You might also be interested in...</p>
@@ -328,7 +361,7 @@
                 @if (count($similar) > 0)
                     <div class="grid grid-cols-1 items-start gap-x-6 gap-y-32 pt-20 sm:grid-cols-3 xl:grid-cols-5">
                         @foreach ($similar as $product)
-                            <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
+                            <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                                 class="relative border border-gray-400 rounded-lg px-3 py-3 w-full flex flex-col items-center">
                                 <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
                                     alt="First Image" class="-mt-20 rounded-lg w-52">

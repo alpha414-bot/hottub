@@ -59,7 +59,7 @@
     <section
         class="mt-6 grid grid-cols-1 items-stretch justify-between gap-x-6 gap-y-12 px-6 py-12 lg:px-32 md:grid-cols-3 lg:grid-cols-5">
         @foreach ($products_intro as $product)
-            <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
+            <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                 class="flex flex-col items-center justify-between">
                 <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
                     alt="The {{ $product->name }} image">
@@ -122,7 +122,7 @@
                 </button>
                 <div class="product-slick relative overflow-hidden">
                     @foreach ($all_products as $product)
-                        <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
+                        <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                             class="inline-block relative p-4">
                             <div class="relative">
                                 <img src="{{ asset('/img/products/showcase/' . $product->slug . '_main_showcase.jpg') }}"
@@ -250,7 +250,6 @@
                     <a target="_blank"
                         href="{{ route('learn-more', [
                             'name' => $animal->name,
-                            'slug' => $animal->slug,
                         ]) }}"
                         class="block font-semibold text-center py-1 px-2 bg-red-700 text-white rounded-2xl">{{ $animal->name }}</a>
                 </div>

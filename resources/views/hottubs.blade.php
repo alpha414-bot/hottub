@@ -31,7 +31,7 @@
                 </div>
                 <div class="mt-8 space-y-7">
                     @foreach ($fully_powered as $product)
-                        <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
+                        <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                             class="flex flex-row items-start gap-4 md:gap-6">
                             <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
                                 alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-32 md:max-w-64">
@@ -40,7 +40,7 @@
                                     @if ($product->new)
                                         <span class="text-2xl text-red-500">NEW!</span>
                                     @endif
-                                    <p class="text-2xl font-normal">{{ $product->name }}</p>
+                                    <p class="text-2xl font-medium">{{ $product->name }}</p>
                                 </div>
                                 <p class="text-sm font-mono font-normal">
                                     {{ $product->measurement }} for up to
@@ -53,33 +53,64 @@
                     @endforeach
                 </div>
             </div>
-            <div class="">
-                <div class="space-y-3">
-                    <h4 class="text-5xl text-center">Plug-and-Play Hot Tubs</h4>
-                    <p class="text-xl text-center">Plug it in and splash into serenity.</p>
-                </div>
-                <div class="mt-8 space-y-7">
-                    @foreach ($plug_and_play as $product)
-                        <a href="{{ route('learn-more', ['name' => $product->name, 'slug' => $product->slug]) }}"
-                            class="flex flex-row items-start gap-4 md:gap-6">
-                            <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
-                                alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-32 md:max-w-64">
-                            <div>
-                                <div class="flex items-center gap-2">
-                                    @if ($product->new)
-                                        <span class="text-2xl text-red-500">NEW!</span>
-                                    @endif
-                                    <p class="text-2xl font-normal">{{ $product->name }}</p>
+            <div class="space-y-20">
+                <div>
+                    <div class="space-y-3">
+                        <h4 class="text-5xl text-center">Plug-and-Play Hot Tubs</h4>
+                        <p class="text-xl text-center">Plug it in and splash into serenity.</p>
+                    </div>
+                    <div class="mt-8 space-y-7">
+                        @foreach ($plug_and_play as $product)
+                            <a href="{{ route('learn-more', ['name' => $product->name]) }}"
+                                class="flex flex-row items-start gap-4 md:gap-6">
+                                <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
+                                    alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-32 md:max-w-64">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        @if ($product->new)
+                                            <span class="text-2xl text-red-500">NEW!</span>
+                                        @endif
+                                        <p class="text-2xl font-medium">{{ $product->name }}</p>
+                                    </div>
+                                    <p class="text-sm font-mono font-normal">
+                                        {{ $product->measurement }} for up to
+                                        {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
+                                    </p>
+                                    <p class="text-lg text-gray-800">{{ $product->short_description }}</p>
+                                    <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
                                 </div>
-                                <p class="text-sm font-mono font-normal">
-                                    {{ $product->measurement }} for up to
-                                    {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
-                                </p>
-                                <p class="text-lg text-gray-800">{{ $product->short_description }}</p>
-                                <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
-                            </div>
-                        </a>
-                    @endforeach
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <div>
+                    <div class="space-y-3">
+                        <h4 class="text-5xl text-center">New! Cold Spas</h4>
+                        <p class="text-xl text-center text-hot-700">Chill out effortlessly in our new cold spas!</p>
+                    </div>
+                    <div class="mt-8 space-y-7">
+                        @foreach ($cold_spas as $product)
+                            <a href="{{ route('learn-more', ['name' => $product->name]) }}"
+                                class="flex flex-row items-start gap-4 md:gap-6">
+                                <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
+                                    alt="The {{ Str::ucfirst($product->slug) }} Image" class="max-w-32 md:max-w-64">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        @if ($product->new)
+                                            <span class="text-2xl text-red-500">NEW!</span>
+                                        @endif
+                                        <p class="text-2xl font-medium">{{ $product->name }}</p>
+                                    </div>
+                                    <p class="text-sm font-mono font-normal">
+                                        {{ $product->measurement }} for up to
+                                        {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
+                                    </p>
+                                    <p class="text-lg text-gray-800">{{ $product->short_description }}</p>
+                                    <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

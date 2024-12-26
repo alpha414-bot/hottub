@@ -25,11 +25,12 @@ Route::get('/hot-tubs', function () {
     return view("hottubs", [
         'fully_powered' => Product::select("slug", "name", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'full-powered-hot-tubs')->get(),
         'plug_and_play' => Product::select("slug", "name", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'plug-and-play-hot-tubs')->get(),
+        'cold_spas' => Product::select("slug", "name", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'cold-spas')->get(),
     ]);
 })->name('hot-tubs');
 
 // Learn more about hot tub product
-Route::get('/learn-more/{slug}/{name}', function (string $slug, string $name) {
+Route::get('/learn-more/{name}', function (string $name) {
     $main_product = Product::where('name', $name)->first();
     if (!$main_product) {
         abort(404);
@@ -43,7 +44,7 @@ Route::get('/learn-more/{slug}/{name}', function (string $slug, string $name) {
         "product" => $main_product,
         "similar" => $similar_products
     ]);
-})->name('learn-more')->whereIn('slug', ['elephant', 'bulldog', 'tiger', 'wolf', 'jaguar', 'hawk', 'falcon']);;
+})->name('learn-more');
 
 // Contact Us Page
 Route::get('/contact-us', function () {
