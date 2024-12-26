@@ -53,7 +53,6 @@
                 </li>
             </ul>
         </div>
-        <x-frontend.cards />
     </div>
     <div class="hidden flex-col items-center py-6 gap-4">
         <img src="{{ asset('/img/alliance/pool_hottub.jpg') }}" alt="Pool & Hot Tub Alliance MEMBER" class="max-w-64 md:max-w-56">

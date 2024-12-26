@@ -48,24 +48,6 @@
 
 <body class="font-sans antialiased relative p-0 m-0">
     @if (!isset($notemplate))
-        {{-- Announcement --}}
-        <div
-            class="bg-hot-700 py-3 px-4 text-center grid grid-cols-1 gap-y-2 items-center md:grid-cols-[1fr_auto] md:px-16">
-            <div class="grow w-full text-white text-base font-medium font-sans">
-                5-Star Google Reviews - Alabama's very own, BBB Accredited, {{ $appname }}
-            </div>
-            <div class="flex items-center justify-center gap-x-4">
-                <a href="{{ $facebook_link }}">
-                    <x-feathericon-facebook class="text-white w-5 h-5" />
-                </a>
-                <a href="{{ $linkedin_link }}">
-                    <x-feathericon-linkedin class="text-white w-5 h-5" />
-                </a>
-                <a href="{{ $instagram_link }}">
-                    <x-feathericon-instagram class="text-white w-5 h-5" />
-                </a>
-            </div>
-        </div>
         {{-- Navbar --}}
         <x-frontend.navbar />
     @endif
