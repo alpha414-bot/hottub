@@ -21,7 +21,7 @@
         <div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/45 to-white/40"></div>
         <h3 class="text-5xl font-bold relative z-10">Contact Us</h3>
     </div>
-    <form method="POST" action="{{ route('contact-us') }}"
+    <form method="POST" action="{{ route('submit-contact-us') }}"
         class="px-4 py-10 md:px-14 md:py-24 xl:px-24 grid md:grid-cols-[2fr_1fr] gap-x-8 gap-y-9">
         @csrf
         <div>

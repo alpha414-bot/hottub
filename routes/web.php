@@ -70,7 +70,7 @@ Route::post("/contact-us", function (Request $request) {
         // ->subject($name . " warehouse - " . $data['subject'] . " from " . $data['name']);
     });
     return redirect()->back()->with('success', 'Your message has been sent successfully');
-})->name("contact-us");
+})->name("submit-contact-us");
 
 // About Us Page
 Route::get('/about-us', function () {
