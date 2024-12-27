@@ -169,9 +169,7 @@
                 <h2 class="text-5xl text-center text-hot-700 md:text-7xl">YOUR <span class="font-bold">TRUSTED</span>
                     LOCAL SOURCE
                 </h2>
-                <p class="text-gray-700 italic text-4xl text-center">Proudly Serving Alabama,
-                    Georgia, and
-                    North Florida</p>
+                <p class="text-gray-700 italic text-4xl text-center">Proudly serving the Southeast</p>
                 <p class="text-gray-900 text-xl text-center tracking-tighter">With {{ $appname }}, you can
                     start
                     relaxing in no time. As your trusted local source for all
