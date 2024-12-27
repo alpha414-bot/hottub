@@ -4,7 +4,7 @@
 
 @layer {
     .learn-more-btn {
-        @apply bg-red-500 hover:bg-red-600 transition-all duration-75 ease-in-out !text-white px-6 py-2 rounded-3xl;
+        @apply bg-hot-700 hover:bg-hot-800 transition-all duration-75 ease-in-out !text-white px-6 py-2 rounded-3xl;
     }
     .light-btn {
         @apply bg-hot-600 px-6 py-3 transition-all duration-75 ease-in-out hover:bg-hot-600/55;
@@ -31,22 +31,22 @@
     }
     /* Rich Text Editor */
     .rich-editor h1 {
-        @apply text-2xl font-semibold !important;
+        @apply text-2xl md:font-semibold !important;
     }
     .rich-editor h2 {
-        @apply text-2xl font-medium !important;
+        @apply text-2xl md:font-medium !important;
     }
     .rich-editor h3 {
-        @apply text-2xl font-medium !important;
+        @apply text-2xl md:font-medium !important;
     }
     .rich-editor h4 {
         @apply text-2xl !important;
     }
     .rich-editor h5 {
-        @apply text-xl font-semibold !important;
+        @apply text-xl md:font-semibold !important;
     }
     .rich-editor h6 {
-        @apply text-xl font-medium !important;
+        @apply text-xl md:font-medium !important;
     }
     .rich-editor ol {
         @apply list-decimal pl-4 !important;

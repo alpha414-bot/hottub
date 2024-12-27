@@ -249,7 +249,7 @@
                         href="{{ route('learn-more', [
                             'name' => $animal->name,
                         ]) }}"
-                        class="block font-semibold text-center py-1 px-2 bg-red-700 text-white rounded-2xl">{{ $animal->name }}</a>
+                        class="block font-semibold text-center py-1 px-2 bg-hot-700 text-white rounded-2xl">{{ $animal->name }}</a>
                 </div>
             @endforeach
         </div>
