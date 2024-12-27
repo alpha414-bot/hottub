@@ -3,17 +3,27 @@
         {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}- Learn More
     </x-slot>
     <x-slot:meta>
-        <meta name="description" content="Contact us for any inquiries related to our company or services.">
-        <meta name="keywords" content="contact, inquiries, services, company">
-        <meta property="og:title" content="Contact Us">
-        <meta property="og:description" content="Contact us for any inquiries related to our company or services.">
-        <meta property="og:type" content="website">
+        <!-- SEO Meta Tags -->
+        <meta name="description"
+            content="Discover more about our {{ $product->name }} - The {{ Str::ucfirst($product->slug) }} hot tubs. Learn about features, benefits, and why our hot tubs are the best choice for relaxation and wellness.">
+        <meta name="keywords"
+            content="{{ $product->slug }}, {{ $product->name }}, {{ $product->type }}, hot tubs, relaxation, wellness, luxury, features, benefits" />
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Learn More About{{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
+        <meta property="og:description" content="{{ $product->short_description }}">
+        <meta property="og:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta property="og:url" content="{{ url()->current() }}">
-        <meta property="og:image" content="{{ asset('images/contactus.jpg') }}">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="{{ $appname }}">
+
+        <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Contact Us">
-        <meta name="twitter:description" content="Contact us for any inquiries related to our company or services.">
-        <meta name="twitter:image" content="{{ asset('images/contactus.jpg') }}">
+        <meta name="twitter:title"
+            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
+        <meta name="twitter:description" content="{{ $product->short_description }}">
+        <meta name="twitter:image" content="{{ asset('images/hottub-feature.jpg') }}">
+        <meta name="twitter:site" content="{{ $twitter_link }}">
     </x-slot>
     {{-- Quick Intro --}}
     <x-frontend.intro />
