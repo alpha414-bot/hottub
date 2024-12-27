@@ -12,6 +12,7 @@
     @isset($meta)
         {{ $meta }}
     @endisset
+    <link rel="canonical" href="{{ url()->current() }}" />
     {{-- Icon --}}
     <link type="image/x-icon" rel="shortcut icon" href="{{ asset('/img/favicon/apple-icon-114x114.png') }}" />
     <link href={{ asset('/img/favicon/apple-icon-57x57.png') }} rel="apple-touch-icon" sizes="57x57" />

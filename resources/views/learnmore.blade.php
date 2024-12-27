@@ -10,7 +10,8 @@
             content="{{ $product->slug }}, {{ $product->name }}, {{ $product->type }}, hot tubs, relaxation, wellness, luxury, features, benefits" />
 
         <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Learn More About{{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
+        <meta property="og:title"
+            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
         <meta property="og:description" content="{{ $product->short_description }}">
         <meta property="og:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta property="og:url" content="{{ url()->current() }}">
@@ -239,6 +240,11 @@
                                     data-tabs-target="#specifications" type="button" role="tab"
                                     aria-controls="specifications" aria-selected="false">Specifications</button>
                             </li>
+                            <li role="presentation">
+                                <button class="inline-block px-4 rounded-lg" id="warranty-tab"
+                                    data-tabs-target="#warranty" type="button" role="tab"
+                                    aria-controls="warranty" aria-selected="false">Warranty</button>
+                            </li>
                         </ul>
                     </div>
                     <div id="product-tab-content" class="rich-editor mt-3">
@@ -302,6 +308,18 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="hidden p-4" id="warranty" role="tabpanel" aria-labelledby="warranty-tab">
+                            <div class="space-y-4 text-base">
+                                @foreach ($product->warranty as $key => $value)
+                                    <p class="space-x-1">
+                                        <span class="font-bold">{{ $key }}:</span>
+                                        <span class="">{{ $value }}</span>
+                                    </p>
+                                @endforeach
+                                <p class="">See additional warranty information <a
+                                        href="{{ route('warranty') }}">here</a>.</p>
                             </div>
                         </div>
                     </div>

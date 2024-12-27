@@ -72,6 +72,11 @@ Route::post("/contact-us", function (Request $request) {
     return redirect()->back()->with('success', 'Your message has been sent successfully');
 })->name("submit-contact-us");
 
+// Warranty Page
+Route::get("/warranty", function () {
+    return view("warranty");
+})->name("warranty");
+
 // About Us Page
 Route::get('/about-us', function () {
     return view("aboutus");

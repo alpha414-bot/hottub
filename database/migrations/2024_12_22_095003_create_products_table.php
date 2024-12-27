@@ -30,6 +30,7 @@ return new class extends Migration
             $table->longText('water_care')->nullable();
             $table->longText('audio_system')->nullable();
             $table->json('specifications')->nullable();
+            $table->json('warranty')->nullable();
             $table->boolean('new')->default(false);
             $table->boolean('free_delivery')->default(false);
             $table->boolean('free_cover')->default(false);

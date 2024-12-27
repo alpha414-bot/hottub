@@ -69,6 +69,17 @@ class DatabaseSeeder extends Seeder
                     "Electrical Requirements" => "220/240V - 60 amp"
                 ]
             ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
+            ],
             "free_delivery" => true,
             "free_cover" => true,
             "free_color_matching_step" => true,
@@ -130,6 +141,17 @@ class DatabaseSeeder extends Seeder
                     "Plug-and-Play" => "No",
                     "Electrical Requirements" => "220/240V - 60 amp"
                 ]
+            ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
             ],
             "new" => true,
             "free_delivery" => true,
@@ -196,6 +218,17 @@ class DatabaseSeeder extends Seeder
                     "Electrical Requirements" => "220/240V - 50 amp"
                 ]
             ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
+            ],
             "free_delivery" => true,
             "free_cover" => true,
             "free_color_matching_step" => true,
@@ -259,6 +292,17 @@ class DatabaseSeeder extends Seeder
                     "Plug-and-Play" => "No",
                     "Electrical Requirements" => "220/240V - 50 amp"
                 ]
+            ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
             ],
             "free_delivery" => true,
             "free_cover" => true,
@@ -324,6 +368,17 @@ class DatabaseSeeder extends Seeder
                     "Electrical Requirements" => "220/240V - 50 amp"
                 ]
             ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
+            ],
             "free_delivery" => true,
             "free_cover" => true,
             "free_color_matching_step" => true,
@@ -386,6 +441,17 @@ class DatabaseSeeder extends Seeder
                     "Plug-and-Play" => "Yes",
                     "Electrical Requirements" => "110/120V - 16 amp"
                 ]
+            ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
             ],
             "free_delivery" => true,
             "free_cover" => true,
@@ -450,6 +516,17 @@ class DatabaseSeeder extends Seeder
                     "Electrical Requirements" => "110/120V - 16 amp"
                 ]
             ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
+            ],
             "free_delivery" => true,
             "free_cover" => true,
             "free_color_matching_step" => true,
@@ -507,6 +584,17 @@ class DatabaseSeeder extends Seeder
                     "Electrical Requirements" => "110/120V - 16 amp (x2)"
                 ]
             ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
+            ],
             "new" => true,
             "free_delivery" => true,
             "free_cover" => true,
@@ -563,6 +651,17 @@ class DatabaseSeeder extends Seeder
                     "Plug-and-Play" => "Yes",
                     "Electrical Requirements" => "110/120V - 16 amp"
                 ]
+            ],
+            "warranty" => [
+                "Stainless Steel Frame" => "Lifetime",
+                "Shell Surface" => "5 Years",
+                "Shell Structure" => "5 Years",
+                "Plumbing" => "2 Years",
+                "Internal Components" => "2 Years",
+                "Exterior Cabinet" => "2 Years",
+                "Jets, Ozone, Lighting" => "1 Year",
+                "Cover, Lifter, Steps" => "1 Year",
+                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
             ],
             "free_delivery" => true,
             "free_cover" => true,

@@ -152,7 +152,7 @@
             </div>
             <div class="px-4 md:-ms-10">
                 <a href="{{ route('contact-us') }}"
-                    class="block bg-hot-700 py-3 px-12 rounded-[3rem] text-3xl text-white tracking-wide">Schedule a
+                    class="block bg-hot-700 py-3 px-12 rounded-[3rem] text-3xl text-white tracking-wide text-center">Schedule a
                     <br class="hidden lg:block" />
                     Consultation</a>
             </div>
