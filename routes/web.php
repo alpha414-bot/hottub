@@ -105,3 +105,13 @@ Route::get('/privacy-policy', function () {
         ]
     ]);
 })->name('privacy-policy');
+
+Route::get("/test", function () {
+    return view("mail", [
+        "name" => "alp",
+        "subject" => "s",
+        "question" => "answer",
+        "phone" => "1234567890",
+        "email" => "alpha"
+    ]);
+});

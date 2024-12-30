@@ -1,17 +1,17 @@
 <x-layout>
     <x-slot:title>
-        {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}- Learn More
+        {{ $product->name }} - Learn More
     </x-slot>
     <x-slot:meta>
         <!-- SEO Meta Tags -->
         <meta name="description"
-            content="Discover more about our {{ $product->name }} - The {{ Str::ucfirst($product->slug) }} hot tubs. Learn about features, benefits, and why our hot tubs are the best choice for relaxation and wellness.">
+            content="Discover more about our {{ $product->name }} - The {{ Str::ucfirst($product->name) }} hot tubs. Learn about features, benefits, and why our hot tubs are the best choice for relaxation and wellness.">
         <meta name="keywords"
             content="{{ $product->slug }}, {{ $product->name }}, {{ $product->type }}, hot tubs, relaxation, wellness, luxury, features, benefits" />
 
         <!-- Open Graph Meta Tags -->
         <meta property="og:title"
-            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
+            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->name) }}">
         <meta property="og:description" content="{{ $product->short_description }}">
         <meta property="og:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta property="og:url" content="{{ url()->current() }}">
@@ -21,7 +21,7 @@
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title"
-            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->slug) }}">
+            content="Learn More About {{ $product->name }} - The {{ Str::ucfirst($product->name) }}">
         <meta name="twitter:description" content="{{ $product->short_description }}">
         <meta name="twitter:image" content="{{ asset('images/hottub-feature.jpg') }}">
         <meta name="twitter:site" content="{{ $twitter_link }}">
@@ -376,10 +376,7 @@
                                     alt="First Image" class="-mt-20 rounded-lg w-52">
                                 <div class="mt-2">
                                     <h5 class="text-lg text-center font-semibold">
-                                        {{ $product->name }}
-                                        <h5 class="text-base text-center font-medium">The
-                                            {{ Str::ucfirst($product->slug) }}
-                                        </h5>
+                                        <h5 class="text-base text-center font-medium">{{ $product->name }}</h5>
                                         <p class="text-center ">{{ $product->measurement }}</p>
                                         <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More
                                         </div>
