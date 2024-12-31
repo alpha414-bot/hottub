@@ -43,8 +43,7 @@
                                     <p class="text-2xl font-medium">{{ $product->name }}</p>
                                 </div>
                                 <p class="text-sm font-mono font-normal">
-                                    {{ $product->measurement }} for up to
-                                    {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
+                                    {{ $product->measurement }} {{ $product->long_caption }}
                                 </p>
                                 <p class="text-lg text-gray-800">{{ $product->short_description }}</p>
                                 <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
@@ -73,11 +72,11 @@
                                         <p class="text-2xl font-medium">{{ $product->name }}</p>
                                     </div>
                                     <p class="text-sm font-mono font-normal">
-                                        {{ $product->measurement }} for up to
-                                        {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
+                                        {{ $product->measurement }} {{ $product->long_caption }}
                                     </p>
                                     <p class="text-lg text-gray-800">{{ $product->short_description }}</p>
-                                    <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
+                                    <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More
+                                    </div>
                                 </div>
                             </a>
                         @endforeach
@@ -102,11 +101,11 @@
                                         <p class="text-2xl font-medium">{{ $product->name }}</p>
                                     </div>
                                     <p class="text-sm font-mono font-normal">
-                                        {{ $product->measurement }} for up to
-                                        {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
+                                        {{ $product->measurement }} {{ $product->long_caption }}
                                     </p>
                                     <p class="text-lg text-gray-800">{{ $product->short_description }}</p>
-                                    <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
+                                    <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More
+                                    </div>
                                 </div>
                             </a>
                         @endforeach

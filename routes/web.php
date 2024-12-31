@@ -23,9 +23,9 @@ Route::get('/', function () {
 // List all Hot Tubs
 Route::get('/hot-tubs', function () {
     return view("hottubs", [
-        'fully_powered' => Product::select("slug", "name", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'full-powered-hot-tubs')->get(),
-        'plug_and_play' => Product::select("slug", "name", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'plug-and-play-hot-tubs')->get(),
-        'cold_spas' => Product::select("slug", "name", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'cold-spas')->get(),
+        'fully_powered' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'full-powered-hot-tubs')->get(),
+        'plug_and_play' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'plug-and-play-hot-tubs')->get(),
+        'cold_spas' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'cold-spas')->get(),
     ]);
 })->name('hot-tubs');
 
@@ -105,13 +105,3 @@ Route::get('/privacy-policy', function () {
         ]
     ]);
 })->name('privacy-policy');
-
-Route::get("/test", function () {
-    return view("mail", [
-        "name" => "alp",
-        "subject" => "s",
-        "question" => "answer",
-        "phone" => "1234567890",
-        "email" => "alpha"
-    ]);
-});
