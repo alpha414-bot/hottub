@@ -54,8 +54,7 @@
                     <h1 class="text-4xl font-bold">{{ $product->name }}</h1>
                     <div class="mt-2 text-sm font-mono font-normal text-gray-500">
                         <p class="">
-                            {{ $product->measurement }} for up to
-                            {{ Str::replace('Seats', 'People', Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration'])) }}
+                            {{ $product->measurement }} {{ $product->long_caption }}
                         </p>
                         <p>{{ $product->caption }}</p>
                     </div>

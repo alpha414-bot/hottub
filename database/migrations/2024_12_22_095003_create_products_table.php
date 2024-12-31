@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->longText('type'); // full-powered-hot-tubs / plug-and-play-hot-tubs / cold-spas
             $table->string('caption')->nullable();
+            $table->string('long_caption')->nullable();
             $table->longText('short_description')->nullable();
             $table->longText('long_description')->nullable();
             $table->string('measurement')->nullable();
