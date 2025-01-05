@@ -107,7 +107,7 @@
     </section>
     {{-- Best Sellers --}}
     <section class="py-12" id="best_sellers">
-        <h2 class="text-5xl text-center md:text-7xl">BESTSELLERS</h2>
+        <h2 class="text-5xl text-center md:text-7xl">BEST SELLERS</h2>
         <div class="flex flex-col items-center justify-center mt-12 mb-4">
             <a href="{{ route('hot-tubs') }}"
                 class="inline-block mx-auto bg-hot-700/55 px-4 py-1.5 text-lg font-semibold text-white">ALL HOT TUBS</a>
@@ -243,10 +243,11 @@
             class="relative z-20 grid grid-cols-3 gap-x-4 gap-y-4 py-8 px-4 lg:-mt-[5%] lg:grid-cols-7 lg:gap-x-14 md:gap-y-8 lg:px-32 lg:py-0">
             @foreach ($animals as $animal)
                 <div class="space-y-4">
-                    <img src="{{ asset('/img/products/' . $animal->slug . '/' . $animal->images[0]) }}"
+                    <a href="{{ route('learn-more', ['name' => $animal->name,]) }}"> 
+                        <img src="{{ asset('/img/products/' . $animal->slug . '/' . $animal->images[0]) }}"
                         alt="{{ $animal->name }} Logo" class="" />
-                    <a target="_blank"
-                        href="{{ route('learn-more', [
+                    </a>
+                    <a href="{{ route('learn-more', [
                             'name' => $animal->name,
                         ]) }}"
                         class="block font-semibold text-center py-1 px-2 bg-hot-700 text-white rounded-2xl">{{ $animal->name }}</a>
