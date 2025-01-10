@@ -32,11 +32,11 @@
                     <h3 class="text-5xl font-bold">Customer-Centric Approach</h3>
                     <p class="font- font-sans">Customer satisfaction is our top priority. We obsess over providing
                         exceptional service and staying focused on what truly matters - you. From the moment you explore
-                        our selection to long after your hot tub is in place, we're here to assist and ensure your
+                        our selection to long after your swim spa is in place, we're here to assist and ensure your
                         complete satisfaction.
                         <br /></br />
                         Choosing {{ $appname }} is simple. It means choosing a local partner dedicated to
-                        delivering more than just hot tubs - we deliver an unmatched experience.
+                        delivering more than just swim spas - we deliver an unmatched experience.
                     </p>
                     <p>
                         <strong>Explore our range, discover the difference, and elevate your relaxation.</strong>
@@ -46,7 +46,7 @@
                             class="text-hot-700 font-medium italic underline-offset-2 hover:underline hover:text-hot-900">Contact
                             us
                             today</a> to find the
-                        perfect hot tub for your lifestyle.
+                        perfect swim spa for your lifestyle.
                     </p>
                     <!--<img src="{{ asset('/img/seal.png') }}" alt="{{ $appname }} Seals Image" class="object-cover">-->
                 </div>

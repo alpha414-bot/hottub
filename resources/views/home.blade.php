@@ -1,19 +1,19 @@
 <x-layout>
     <x-slot:meta>
         <meta name="description"
-            content="Discover luxury hot tubs at family-friendly prices. Enjoy free delivery, extended warranty plans, and financing options. Serving Alabama, Georgia, and North Florida.">
+            content="Discover luxury swim spas at family-friendly prices. Enjoy free delivery, extended warranty plans, and financing options. Serving Alabama, Georgia, and North Florida.">
         <meta name="keywords"
-            content="hot tubs, luxury hot tubs, family-friendly prices, free delivery, extended warranty, financing options, hydrotherapy, Alabama, Georgia, North Florida">
-        <meta property="og:title" content="Luxury Hot Tubs at Family-Friendly Prices">
+            content="swim spas, luxury swim spas, family-friendly prices, free delivery, extended warranty, financing options, hydrotherapy, Alabama, Georgia, North Florida">
+        <meta property="og:title" content="Luxury Swim Spas at Family-Friendly Prices">
         <meta property="og:description"
-            content="Discover luxury hot tubs at family-friendly prices. Enjoy free delivery, extended warranty plans, and financing options. Serving Alabama, Georgia, and North Florida.">
+            content="Discover luxury swim spas at family-friendly prices. Enjoy free delivery, extended warranty plans, and financing options. Serving Alabama, Georgia, and North Florida.">
         <meta property="og:image" content="{{ asset('/img/hero.webp') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Luxury Hot Tubs at Family-Friendly Prices">
+        <meta name="twitter:title" content="Luxury Swim Spas at Family-Friendly Prices">
         <meta name="twitter:description"
-            content="Discover luxury hot tubs at family-friendly prices. Enjoy free delivery, extended warranty plans, and financing options. Serving Alabama, Georgia, and North Florida.">
+            content="Discover luxury swim spas at family-friendly prices. Enjoy free delivery, extended warranty plans, and financing options. Serving Alabama, Georgia, and North Florida.">
         <meta name="twitter:image" content="{{ asset('/img/hero.webp') }}">
     </x-slot>
     <x-slot:headcss>
@@ -51,7 +51,7 @@
         </script>
     </x-slot>
     <x-slot:title>
-        Hot Tub
+        Swim Spa
     </x-slot>
     {{-- Quick Intro --}}
     <x-frontend.intro />
@@ -61,7 +61,7 @@
         @foreach ($products_intro as $product)
             <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                 class="flex flex-col items-center justify-between">
-                <img src="{{ asset('/img/products/' . $product->slug . '/' . $product->images[0]) }}"
+                <img src="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
                     alt="The {{ $product->name }} image">
                 {{-- <div class="mt-1 flex flex-col items-center justify-start md:mt-4"> --}}
                 <div>
@@ -79,11 +79,11 @@
         class="relative flex items-center justify-center pt-5 pb-14 px-3 bg-cover bg-center bg-no-repeat min-h-[90vh] w-full bg-hot-700 md:px-5 lg:justify-end"
         style="background-image: url({{ asset('/img/hero.webp') }});">
         <div class="bg-hot-700/70 backdrop-blur-sm w-full py-10 text-white rounded-xl space-y-3 px-7 md:w-[36rem]">
-            <h3 class="text-5xl font-bold text-center lg:text-left lg:text-6xl lg:leading-[4.2rem]">LUXURY HOT TUBS,
+            <h3 class="text-5xl font-bold text-center lg:text-left lg:text-6xl lg:leading-[4.2rem]">LUXURY SWIM SPAS,
                 FAMILY&shy;FRIENDLY PRICES</h3>
             <p class="text-lg text-left">
                 <span class="text-2xl font-normal text-center">Perfect for family time or personal</span>
-                <span class="text-2xl font-medium text-center">hydrotherapy, our hot tubs bring luxury to your</span>
+                <span class="text-2xl font-medium text-center">hydrotherapy, our swim spas bring luxury to your</span>
                 <span clas="inline-flex items-center justify-center">
                     <span class="text-2xl ">backyard with the</span>
                     <span class="ms-2 inline-flex flex-col relative whitespacenowrap isolate text-3xl overflow-visible">
@@ -109,8 +109,8 @@
     <section class="py-12" id="best_sellers">
         <h2 class="text-5xl text-center md:text-7xl">BEST SELLERS</h2>
         <div class="flex flex-col items-center justify-center mt-12 mb-4">
-            <a href="{{ route('hot-tubs') }}"
-                class="inline-block mx-auto bg-hot-700/55 px-4 py-1.5 text-lg font-semibold text-white">ALL HOT TUBS</a>
+            <a href="{{ route('swim-spas') }}"
+                class="inline-block mx-auto bg-hot-700/55 px-4 py-1.5 text-lg font-semibold text-white">ALL SWIM SPAS</a>
             <div class="w-full px-2 py-5 relative lg:px-24">
                 <button type="button" id="prevArrow" data-slick="product-slick"
                     class="absolute z-30 p-2 top-1/2 left-8 bg-white shadow-md rounded-full">
@@ -125,7 +125,7 @@
                         <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                             class="inline-block relative p-4">
                             <div class="relative">
-                                <img src="{{ asset('/img/products/showcase/' . $product->slug . '_main_showcase.jpg') }}"
+                                <img src="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
                                     alt="First Image" class="shadow-md shadow-gray-400">
                                 <div
                                     class="absolute cursor-pointer bottom-2 left-2 text-lg bg-hot-700/75 text-white rounded-[2rem] px-6 py-2 hover:text-gray-300">
@@ -173,7 +173,7 @@
                 <p class="text-gray-900 text-xl text-center tracking-tighter">With {{ $appname }}, you can
                     start
                     relaxing in no time. As your trusted local source for all
-                    things hot tub, we're here to help you find the perfect hot tub for your family. Enjoy superior
+                    things swim spa, we're here to help you find the perfect swim spa for your family. Enjoy superior
                     hydrotherapy and unmatched quality, all with the convenience of local service and support.</p>
             </div>
             {{-- Gallery is here --}}
@@ -191,27 +191,27 @@
         </div>
         <div class="relative z-10 w-full items-center grid gap-y-6 lg:grid-cols-2">
             <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">
-                <img src={{ asset('/img/full_power_wave.webp') }} alt="Full-Power Hot Tubs Image"
+                <img src={{ asset('/img/full_power_wave.webp') }} alt="Full-Power Swim Spas Image"
                     class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">
                 <div class="space-y-2 md:py-12 text-center md:text-left">
-                    <h2 class="text-4xl font-normal ">Full-Power Hot Tubs</h2>
+                    <h2 class="text-4xl font-normal ">Full-Power Swim Spas</h2>
                     <p class="hyphens-manual text-base font-normal">Bring home the full power and
                         hydrotherapy with a
                         full&shy;powered (220V)
-                        hot tub.</p>
-                    <a href="{{ route('hot-tubs') }}"
+                        swim spa.</p>
+                    <a href="{{ route('swim-spas') }}"
                         class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn
                         More</a>
                 </div>
             </div>
             <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">
-                <img src={{ asset('/img/plug_and_play_wave.webp') }} alt="Plug-and-Play Hot Tubs"
+                <img src={{ asset('/img/plug_and_play_wave.webp') }} alt="Plug-and-Play Swim Spas"
                     class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">
                 <div class="space-y-2 md:py-12 text-center md:text-left">
-                    <h2 class="text-4xl font-normal ">Plug-and-Play Hot Tubs</h2>
+                    <h2 class="text-4xl font-normal ">Plug-and-Play Swim Spas</h2>
                     <p class="hyphens-manual text-base font-normal">Experience the simplicity of a plug-and-play hot
                         tub, without compromising on quality.</p>
-                    <a href="{{ route('hot-tubs') }}"
+                    <a href="{{ route('swim-spas') }}"
                         class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn
                         More</a>
                 </div>
@@ -243,9 +243,9 @@
             class="relative z-20 grid grid-cols-3 gap-x-4 gap-y-4 py-8 px-4 lg:-mt-[5%] lg:grid-cols-7 lg:gap-x-14 md:gap-y-8 lg:px-32 lg:py-0">
             @foreach ($animals as $animal)
                 <div class="space-y-4">
-                    <a href="{{ route('learn-more', ['name' => $animal->name,]) }}"> 
-                        <img src="{{ asset('/img/products/' . $animal->slug . '/' . $animal->images[0]) }}"
-                        alt="{{ $animal->name }} Logo" class="" />
+                    <a href="{{ route('learn-more', ['name' => $animal->name,]) }}">
+                        <img src="{{ asset('/img/products/' . $animal->slug . '_' . $animal->images[0]) }}"
+                        alt="{{ $animal->name }} Logo" class="bg-transparent" />
                     </a>
                     <a href="{{ route('learn-more', [
                             'name' => $animal->name,

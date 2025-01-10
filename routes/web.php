@@ -20,16 +20,14 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-// List all Hot Tubs
-Route::get('/hot-tubs', function () {
-    return view("hottubs", [
-        'fully_powered' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'full-powered-hot-tubs')->get(),
-        'plug_and_play' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'plug-and-play-hot-tubs')->get(),
-        'cold_spas' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'cold-spas')->get(),
+// List all Swim Spas
+Route::get('/swim-spas', function () {
+    return view("swimspas", [
+        "products" => Product::all()
     ]);
-})->name('hot-tubs');
+})->name('swim-spas');
 
-// Learn more about hot tub product
+// Learn more about swim spa product
 Route::get('/learn-more/{name}', function (string $name) {
     $main_product = Product::where('name', $name)->first();
     if (!$main_product) {
@@ -105,3 +103,7 @@ Route::get('/privacy-policy', function () {
         ]
     ]);
 })->name('privacy-policy');
+
+Route::get("/test", function () {
+    return view("test");
+});

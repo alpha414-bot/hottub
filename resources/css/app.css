@@ -15,6 +15,43 @@
     .form-input {
         @apply w-full !border !border-gray-300 !py-1 !px-2 !rounded-lg outline-none focus:!border-none focus:!ring-4 !ring-hot-700/35;
     }
+    /* Mixitup */
+    .mixitup-product-wrapper.mixitup-container-failed,
+    .no-container-products {
+        @apply !py-4 !w-full !flex flex-col !items-center !justify-center !text-center rounded-md;
+    }
+
+    .mixitup-product-wrapper.mixitup-container-failed > .product-placeholder {
+        @apply !hidden;
+    }
+    .mixitup-product-wrapper.mixitup-container-failed > .no-product-data,
+    .no-container-products > .no-product-data {
+        @apply !block text-center font-semibold text-xl tracking-tight underline underline-offset-2 decoration-dotted;
+    }
+    .mixitup-page-list {
+        @apply relative z-10 w-full !py-4 flex items-stretch justify-center gap-x-3;
+    }
+    .mixitup-page-list.mixitup-page-list-disabled {
+        @apply !hidden;
+    }
+    .mixitup-page-list > .mixitup-control:first-child,
+    .mixitup-page-list > .mixitup-control:last-child {
+        @apply !tracking-wide !align-middle !flex !items-center !justify-center !text-base !font-medium;
+    }
+    .mixitup-page-list > .mixitup-control:first-child::after {
+        content: "Prev";
+        @apply !ms-0.5 !text-base;
+    }
+    .mixitup-page-list > .mixitup-control:last-child::before {
+        content: "Next";
+        @apply !me-0.5 !text-base;
+    }
+    .mixitup-page-list > .mixitup-control-active {
+        @apply !bg-hot-600 !text-white !cursor-not-allowed hover:!bg-hot-700;
+    }
+    .mixitup-page-list > .mixitup-control {
+        @apply flex items-center justify-center !border-2 !border-gray-400 !px-4 !py-2 rounded-md !text-lg !leading-none !font-bold shadow shadow-gray-700 !transition-all !duration-150 !ease-in-out hover:!bg-hot-600 disabled:!bg-zinc-400 disabled:!text-gray-200 disabled:!cursor-not-allowed;
+    }
     /* Image Gallery */
     .image-gallery-thumbnail.active,
     .image-gallery-thumbnail:focus,

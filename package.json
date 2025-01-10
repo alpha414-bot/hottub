@@ -16,6 +16,9 @@
         "flowbite": "^2.5.2",
         "laravel-vite-plugin": "^1.0",
         "lodash": "^4.17.21",
+        "mixitup": "^3.3.2",
+        "mixitup-multifilter": "^3.3.7",
+        "mixitup-pagination": "^3.3.2",
         "postcss": "^8.4.49",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -27,6 +30,7 @@
     "dependencies": {
         "alpinejs": "^3.14.8",
         "fslightbox": "^3.4.2",
-        "fslightbox-react": "^1.7.6"
+        "fslightbox-react": "^1.7.6",
+        "lightgallery": "^2.8.2"
     }
 }

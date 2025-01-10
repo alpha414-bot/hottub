@@ -1,7 +1,7 @@
 {{--  --}}
 @php
     $footer_links = [
-        ['text' => 'Hot Tubs', 'link' => route('hot-tubs')],
+        ['text' => 'Swim Spas', 'link' => route('swim-spas')],
         ['text' => 'Why Choose Us?', 'link' => route('about-us')],
         ['text' => 'Contact Us', 'link' => route('contact-us')],
         ['text' => 'Privacy Policy', 'link' => route('privacy-policy')],
@@ -55,9 +55,9 @@
         </div>
     </div>
     <div class="hidden flex-col items-center py-6 gap-4">
-        <img src="{{ asset('/img/alliance/pool_hottub.jpg') }}" alt="Pool & Hot Tub Alliance MEMBER" class="max-w-64 md:max-w-56">
-        <img src="{{ asset('/img/alliance/accredited_business.svg') }}" alt="Pool & Hot Tub Alliance MEMBER"
+        <img src="{{ asset('/img/alliance/pool_hottub.jpg') }}" alt="Pool & Swim Spa Alliance MEMBER" class="max-w-64 md:max-w-56">
+        <img src="{{ asset('/img/alliance/accredited_business.svg') }}" alt="Pool & Swim Spa Alliance MEMBER"
             class="max-w-44 md:max-w-32">
-        <img src="{{ asset('/img/alliance/affirm_logo.png') }}" alt="Pool & Hot Tub Alliance MEMBER" class="max-w-32 md:max-w-20">
+        <img src="{{ asset('/img/alliance/affirm_logo.png') }}" alt="Pool & Swim Spa Alliance MEMBER" class="max-w-32 md:max-w-20">
     </div>
 </section>

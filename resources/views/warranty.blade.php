@@ -16,7 +16,7 @@
         <meta name="twitter:image" content="{{ asset('images/contactus.jpg') }}">
     </x-slot:meta>
     <div class="py-8 px-4 space-y-6 md:space-y-12 md:px-24">
-        {{ $appname }} offers a best-in-class warranty on all hot tubs, though the specific warranty periods may
+        {{ $appname }} offers a best-in-class warranty on all swim spas, though the specific warranty periods may
         vary by model.
         @php
             $warranties = [
@@ -114,7 +114,7 @@
                     The manufacturer will not provide compensation for delays in rectifying a faulty/broken spa.
                 </li>
                 <li>
-                    The cover, cover lifter, and steps must be purchased with the hot tub to receive a 6-month warranty.
+                    The cover, cover lifter, and steps must be purchased with the swim spa to receive a 6-month warranty.
                     Otherwise, these items are limited to a 90-day warranty.
                 </li>
                 <li>
@@ -128,15 +128,15 @@
                     1-Year Extended Warranty. These extended warranties apply to the following component warranties:
                     Shell
                     Surface; Shell Structure; Plumbing; Internal Components; Exterior Cabinet; Jets, Ozone, Lighting.
-                    Extended warranties should be purchased at the same time as the hot tub. Extended warranties should
+                    Extended warranties should be purchased at the same time as the swim spa. Extended warranties should
                     be
-                    purchased at the same time as the hot tub. If not purchased concurrently, customers may still
+                    purchased at the same time as the swim spa. If not purchased concurrently, customers may still
                     purchase
-                    the extended warranty within 30 days of hot tub delivery, provided that the hot tub was delivered
+                    the extended warranty within 30 days of swim spa delivery, provided that the swim spa was delivered
                     via an
                     authorized backyard delivery service (not curbside delivery), and no warranty claims have been made,
                     and
-                    no tickets have been opened for the hot tub.
+                    no tickets have been opened for the swim spa.
                 </li>
             </ul>
         </div>

@@ -39,12 +39,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"
         integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Styles / Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.tsx'])
     <!-- Custom Styles-->
     @isset($headccss)
         {{ $headcss }}
     @endisset
-    <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.tsx'])
 </head>
 
 <body class="font-sans antialiased relative p-0 m-0">

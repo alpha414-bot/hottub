@@ -1,22 +1,22 @@
 <x-layout>
     <x-slot:title>
-        Hot Tubs
+        Swim Spas
     </x-slot>
 
     <x-slot:meta>
         <meta name="description"
-            content="Explore our range of luxurious hot tubs. Perfect for relaxation and rejuvenation.">
-        <meta name="keywords" content="hot tubs, luxury hot tubs, relaxation, spa, wellness">
-        <meta property="og:title" content="Hot Tubs">
+            content="Explore our range of luxurious swim spas. Perfect for relaxation and rejuvenation.">
+        <meta name="keywords" content="swim spas, luxury swim spas, relaxation, spa, wellness">
+        <meta property="og:title" content="Swim Spas">
         <meta property="og:description"
-            content="Explore our range of luxurious hot tubs. Perfect for relaxation and rejuvenation.">
+            content="Explore our range of luxurious swim spas. Perfect for relaxation and rejuvenation.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:image" content="{{ asset('images/hottub.jpg') }}">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Hot Tubs">
+        <meta name="twitter:title" content="Swim Spas">
         <meta name="twitter:description"
-            content="Explore our range of luxurious hot tubs. Perfect for relaxation and rejuvenation.">
+            content="Explore our range of luxurious swim spas. Perfect for relaxation and rejuvenation.">
         <meta name="twitter:image" content="{{ asset('images/hottub.jpg') }}">
     </x-slot>
 
@@ -26,7 +26,7 @@
         <div class="grid grid-cols-1 gap-20 justify-evenly xl:grid-cols-2">
             <div class="">
                 <div class="space-y-3">
-                    <h4 class="text-5xl text-center">Full Powered Hot Tubs</h4>
+                    <h4 class="text-5xl text-center">Full Powered Swim Spas</h4>
                     <p class="text-xl text-center">Experience true maximum hydrotherapy</p>
                 </div>
                 <div class="mt-8 space-y-7">
@@ -55,7 +55,7 @@
             <div class="space-y-20">
                 <div>
                     <div class="space-y-3">
-                        <h4 class="text-5xl text-center">Plug-and-Play Hot Tubs</h4>
+                        <h4 class="text-5xl text-center">Plug-and-Play Swim Spas</h4>
                         <p class="text-xl text-center">Plug it in and splash into serenity.</p>
                     </div>
                     <div class="mt-8 space-y-7">

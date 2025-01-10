@@ -24,8 +24,8 @@ const Gallery: FC<GalleryInterface> = ({
         const parse_data = JSON.parse(img);
         if (directory) {
             return _.map(parse_data, (img) => ({
-                original: `${directory}/${img}`,
-                thumbnail: `${directory}/${img}`,
+                original: `${directory}_${img}`,
+                thumbnail: `${directory}_${img}`,
             }));
         }
         return parse_data;
@@ -55,6 +55,7 @@ const Gallery: FC<GalleryInterface> = ({
                     showFullscreenButton: false,
                     showPlayButton: false,
                     thumbnailPosition,
+                    showThumbnails: false
                 }}
                 renderItem={({ original }) => (
                     <div

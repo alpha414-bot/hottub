@@ -1,12 +1,23 @@
 import Alpine from "alpinejs";
 import "flowbite";
-
+import mixitup from "mixitup";
 import React from "react";
 import ReactDOM from "react-dom";
 import Gallery from "./components/Gallery";
+import mixitupmultifilter from "mixitup-multifilter";
+import mixitupPagination from "mixitup-pagination";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lightgallery.css";
 
-// window.Alpine = Alpine;
-
+declare global {
+    interface Window {
+        mixitup: typeof mixitup;
+    }
+}
+mixitup.use(mixitupmultifilter);
+mixitup.use(mixitupPagination);
+window.mixitup = mixitup;
 Alpine.start();
 if (document.getElementById("product-image-gallery")) {
     const element = document.getElementById("product-image-gallery");
