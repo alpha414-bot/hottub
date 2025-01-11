@@ -16,7 +16,7 @@
         <meta name="twitter:image" content="{{ asset('images/aboutus.jpg') }}">
     </x-slot:meta>
     <main class="px-4 py-12 xl:px-24 xl:py-24 space-y-24">
-        <h1 class="text-5xl font-bold text-center">Why choose the Hydro Series by <br>Gulfsouth Outdoor Living?</h1>
+        <h1 class="text-5xl font-bold text-center">Why choose the Swim Spa by <br>Gulfsouth Outdoor Living?</h1>
         <div class="grid xl:grid-cols-[1.2fr_1fr] gap-12">
             <div class="space-y-6 text-lg">
                 <div class="space-y-2">

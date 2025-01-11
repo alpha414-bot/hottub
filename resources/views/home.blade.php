@@ -184,40 +184,39 @@
         </div>
     </section>
     {{-- Quick comparison --}}
-    <section class="relative z-10 bg-hot-700 text-white px-2 py-10 lg:pt-20 lg:pb-8 lg:px-24">
-        <div class="hidden absolute w-full -top-4 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none lg:block"
-            style="background-image: url('{{ asset('/img/wavy.svg') }}');">
-
-        </div>
-        <div class="relative z-10 w-full items-center grid gap-y-6 lg:grid-cols-2">
-            <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">
-                <img src={{ asset('/img/full_power_wave.webp') }} alt="Full-Power Swim Spas Image"
-                    class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">
-                <div class="space-y-2 md:py-12 text-center md:text-left">
-                    <h2 class="text-4xl font-normal ">Full-Power Swim Spas</h2>
-                    <p class="hyphens-manual text-base font-normal">Bring home the full power and
-                        hydrotherapy with a
-                        full&shy;powered (220V)
-                        swim spa.</p>
-                    <a href="{{ route('swim-spas') }}"
-                        class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn
-                        More</a>
-                </div>
-            </div>
-            <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">
-                <img src={{ asset('/img/plug_and_play_wave.webp') }} alt="Plug-and-Play Swim Spas"
-                    class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">
-                <div class="space-y-2 md:py-12 text-center md:text-left">
-                    <h2 class="text-4xl font-normal ">Plug-and-Play Swim Spas</h2>
-                    <p class="hyphens-manual text-base font-normal">Experience the simplicity of a plug-and-play hot
-                        tub, without compromising on quality.</p>
-                    <a href="{{ route('swim-spas') }}"
-                        class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn
-                        More</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--<section class="relative z-10 bg-hot-700 text-white px-2 py-10 lg:pt-20 lg:pb-8 lg:px-24">-->
+    <!--    <div class="hidden absolute w-full -top-4 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none lg:block"-->
+    <!--        style="background-image: url('{{ asset('/img/wavy.svg') }}');">-->
+    <!--    </div>-->
+    <!--    <div class="relative z-10 w-full items-center grid gap-y-6 lg:grid-cols-2">-->
+    <!--        <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">-->
+    <!--            <img src={{ asset('/img/full_power_wave.webp') }} alt="Full-Power Swim Spas Image"-->
+    <!--                class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">-->
+    <!--            <div class="space-y-2 md:py-12 text-center md:text-left">-->
+    <!--                <h2 class="text-4xl font-normal ">Full-Power Swim Spas</h2>-->
+    <!--                <p class="hyphens-manual text-base font-normal">Bring home the full power and-->
+    <!--                    hydrotherapy with a-->
+    <!--                    full&shy;powered (220V)-->
+    <!--                    swim spa.</p>-->
+    <!--                <a href="{{ route('swim-spas') }}"-->
+    <!--                    class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn-->
+    <!--                    More</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">-->
+    <!--            <img src={{ asset('/img/plug_and_play_wave.webp') }} alt="Plug-and-Play Swim Spas"-->
+    <!--                class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">-->
+    <!--            <div class="space-y-2 md:py-12 text-center md:text-left">-->
+    <!--                <h2 class="text-4xl font-normal ">Plug-and-Play Swim Spas</h2>-->
+    <!--                <p class="hyphens-manual text-base font-normal">Experience the simplicity of a plug-and-play hot-->
+    <!--                    tub, without compromising on quality.</p>-->
+    <!--                <a href="{{ route('swim-spas') }}"-->
+    <!--                    class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn-->
+    <!--                    More</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
     <section class="relative bg-white pb-6">
         <div class="relative z-10 bg-gray-300 text-gray-800 py-8 lg:pt-16 lg:pb-24">
             <div class="hidden absolute w-full -top-2 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none bg-top lg:block"
