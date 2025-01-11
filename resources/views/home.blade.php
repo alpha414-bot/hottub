@@ -60,10 +60,12 @@
         class="mt-6 grid grid-cols-1 items-stretch justify-between gap-x-6 gap-y-12 px-6 py-12 lg:px-32 md:grid-cols-3 lg:grid-cols-5">
         @foreach ($products_intro as $product)
             <a href="{{ route('learn-more', ['name' => $product->name]) }}"
-                class="flex flex-col items-center justify-between">
-                <img src="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
-                    alt="The {{ $product->name }} image">
-                {{-- <div class="mt-1 flex flex-col items-center justify-start md:mt-4"> --}}
+                class="flex flex-col items-center justify-between space-y-3 md:space-y-2">
+                <div class="p-4 bg-gray-200 rounded-lg w-full md:bg-transparent md:p-0">
+                    <div class="w-full h-[22rem] bg-contain bg-center bg-no-repeat"
+                        style="background-image: url('{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}')">
+                    </div>
+                </div>
                 <div>
                     <p class="text-3xl text-center font-normal">{{ $product->name }}</p>
                     <p class="text-base text-center font-normal">{{ $product->measurement }}
@@ -110,7 +112,8 @@
         <h2 class="text-5xl text-center md:text-7xl">BEST SELLERS</h2>
         <div class="flex flex-col items-center justify-center mt-12 mb-4">
             <a href="{{ route('swim-spas') }}"
-                class="inline-block mx-auto bg-hot-700/55 px-4 py-1.5 text-lg font-semibold text-white">ALL SWIM SPAS</a>
+                class="inline-block mx-auto bg-hot-700/55 px-4 py-1.5 text-lg font-semibold text-white">ALL SWIM
+                SPAS</a>
             <div class="w-full px-2 py-5 relative lg:px-24">
                 <button type="button" id="prevArrow" data-slick="product-slick"
                     class="absolute z-30 p-2 top-1/2 left-8 bg-white shadow-md rounded-full">
@@ -125,8 +128,11 @@
                         <a href="{{ route('learn-more', ['name' => $product->name]) }}"
                             class="inline-block relative p-4">
                             <div class="relative">
-                                <img src="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
-                                    alt="First Image" class="shadow-md shadow-gray-400">
+                                <div class="p-4 rounded-lg shadow-md shadow-gray-400">
+                                    <div class="w-full h-96 bg-contain bg-center bg-no-repeat"
+                                        style="background-image: url('{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}')">
+                                    </div>
+                                </div>
                                 <div
                                     class="absolute cursor-pointer bottom-2 left-2 text-lg bg-hot-700/75 text-white rounded-[2rem] px-6 py-2 hover:text-gray-300">
                                     {{ $product->name }}</div>
@@ -152,7 +158,8 @@
             </div>
             <div class="px-4 md:-ms-10">
                 <a href="{{ route('contact-us') }}"
-                    class="block bg-hot-700 py-3 px-12 rounded-[3rem] text-3xl text-white tracking-wide text-center">Schedule a
+                    class="block bg-hot-700 py-3 px-12 rounded-[3rem] text-3xl text-white tracking-wide text-center">Schedule
+                    a
                     <br class="hidden lg:block" />
                     Consultation</a>
             </div>
@@ -183,40 +190,6 @@
 
         </div>
     </section>
-    {{-- Quick comparison --}}
-    <!--<section class="relative z-10 bg-hot-700 text-white px-2 py-10 lg:pt-20 lg:pb-8 lg:px-24">-->
-    <!--    <div class="hidden absolute w-full -top-4 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none lg:block"-->
-    <!--        style="background-image: url('{{ asset('/img/wavy.svg') }}');">-->
-    <!--    </div>-->
-    <!--    <div class="relative z-10 w-full items-center grid gap-y-6 lg:grid-cols-2">-->
-    <!--        <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">-->
-    <!--            <img src={{ asset('/img/full_power_wave.webp') }} alt="Full-Power Swim Spas Image"-->
-    <!--                class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">-->
-    <!--            <div class="space-y-2 md:py-12 text-center md:text-left">-->
-    <!--                <h2 class="text-4xl font-normal ">Full-Power Swim Spas</h2>-->
-    <!--                <p class="hyphens-manual text-base font-normal">Bring home the full power and-->
-    <!--                    hydrotherapy with a-->
-    <!--                    full&shy;powered (220V)-->
-    <!--                    swim spa.</p>-->
-    <!--                <a href="{{ route('swim-spas') }}"-->
-    <!--                    class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn-->
-    <!--                    More</a>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        <div class="flex flex-nowrap flex-col items-center gap-x-5 gap-y-2 px-6 md:flex-row">-->
-    <!--            <img src={{ asset('/img/plug_and_play_wave.webp') }} alt="Plug-and-Play Swim Spas"-->
-    <!--                class="max-w-96 w-44 rounded-full p-1.5 bg-white shadow-md shadow-gray-600">-->
-    <!--            <div class="space-y-2 md:py-12 text-center md:text-left">-->
-    <!--                <h2 class="text-4xl font-normal ">Plug-and-Play Swim Spas</h2>-->
-    <!--                <p class="hyphens-manual text-base font-normal">Experience the simplicity of a plug-and-play hot-->
-    <!--                    tub, without compromising on quality.</p>-->
-    <!--                <a href="{{ route('swim-spas') }}"-->
-    <!--                    class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn-->
-    <!--                    More</a>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</section>-->
     <section class="relative bg-white pb-6">
         <div class="relative z-10 bg-gray-300 text-gray-800 py-8 lg:pt-16 lg:pb-24">
             <div class="md:py-6">
@@ -238,13 +211,13 @@
             class="relative z-20 grid grid-cols-3 gap-x-4 gap-y-4 py-8 px-4 lg:-mt-[5%] lg:grid-cols-7 lg:gap-x-14 md:gap-y-8 lg:px-32 lg:py-0">
             @foreach ($animals as $animal)
                 <div class="space-y-4">
-                    <a href="{{ route('learn-more', ['name' => $animal->name,]) }}">
+                    <a href="{{ route('learn-more', ['name' => $animal->name]) }}">
                         <img src="{{ asset('/img/products/' . $animal->slug . '_' . $animal->images[0]) }}"
-                        alt="{{ $animal->name }} Logo" class="bg-transparent" />
+                            alt="{{ $animal->name }} Logo" class="bg-transparent" />
                     </a>
                     <a href="{{ route('learn-more', [
-                            'name' => $animal->name,
-                        ]) }}"
+                        'name' => $animal->name,
+                    ]) }}"
                         class="block font-semibold text-center py-1 px-2 bg-hot-700 text-white rounded-2xl">{{ $animal->name }}</a>
                 </div>
             @endforeach

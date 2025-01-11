@@ -53,7 +53,7 @@
 
 <section class="h-auto py-2 block lg:hidden">
     <div id="product-image-gallery"
-        data-images="{{ json_encode(['/gallery/6.png', '/gallery/9.jpg', '/gallery/10.png', '/gallery/5.jpg', '/gallery/8.jpg', '/products/showcase/falcon_bottom_showcase_1.jpg', '/products/showcase/tiger_wolf_jaguar_bottom_showcase_1.jpg', 'products/showcase/tiger_wolf_jaguar_bottom_showcase_3.jpg']) }}"
+        data-images="{{ json_encode(['/gallery/1.jpg', '/gallery/2.jpg', '/gallery/3.jpg', '/gallery/4.jpg', '/gallery/5.jpg', '/gallery/6.png', '/gallery/7.jpg', '/gallery/8.jpg', '/gallery/9.jpg', '/gallery/10.png']) }}"
         data-directory="{{ asset('/img') }}" data-thumbnail-position="left"></div>
 
 </section>

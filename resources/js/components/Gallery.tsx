@@ -24,8 +24,8 @@ const Gallery: FC<GalleryInterface> = ({
         const parse_data = JSON.parse(img);
         if (directory) {
             return _.map(parse_data, (img) => ({
-                original: `${directory}_${img}`,
-                thumbnail: `${directory}_${img}`,
+                original: `${directory}${img}`,
+                thumbnail: `${directory}${img}`,
             }));
         }
         return parse_data;

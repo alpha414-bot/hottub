@@ -2,7 +2,5 @@
     <h3 class="text-5xl text-center md:text-6xl">All Swim Spas Include <span class="text-red-700 font-bold">Free</span>
         <span class="font-bold">Delivery</span>
     </h3>
-    <p class="text-xl text-center md:text-3xl">Our local swim spa experts ensure a hassle-free limitations may apply delivery at no
-        additional cost to
-        you, allowing you to begin your relaxation journey even before your swim spa arrives.</p>
+    <p class="text-xl text-center md:text-3xl">Our swim spa delivery experts ensure a hassle-free delivery and no cost to to you, allowing you to begin enjoying your swim spa as soon as it arrives. Some limitations apply.</p>
 </section>

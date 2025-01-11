@@ -249,14 +249,5 @@
             </div>
         </div>
     </main>
-    <div class="hidden">
-        <div class="grid-cols-1 hidden"></div>
-        <div class="grid-cols-2 hidden"></div>
-        <div class="grid-cols-3 hidden"></div>
-        <div class="grid-cols-4 hidden"></div>
-        <div class="grid-cols-5 hidden"></div>
-        <div class="grid-cols-6 hidden"></div>
-        <div class="grid-cols-7 hidden"></div>
-        <div class="grid-cols-8 hidden"></div>
-    </div>
+
 </x-layout>

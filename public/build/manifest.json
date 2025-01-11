@@ -20,12 +20,12 @@
     "src": "node_modules/lightgallery/images/loading.gif"
   },
   "resources/css/app.css": {
-    "file": "assets/app-RIZc4Xqb.css",
+    "file": "assets/app-CUbnqdJ_.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-Bl4kG_Yk.js",
+    "file": "assets/app-BWSMeLgA.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
