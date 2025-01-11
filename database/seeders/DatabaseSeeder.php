@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $appname = getenv("APP_NAME");
-        // GH1200
+        // GSS12
         Product::factory()->create([
-            "slug" => "gh1200",
-            "name" => "GH1200",
+            "slug" => "gss12",
+            "name" => "GSS12",
             "type" => "Generation Hot Tubs",
             "caption" => "",
             "measurement" => '144" x 90" x 48"',
@@ -46,10 +46,10 @@ class DatabaseSeeder extends Seeder
             "free_delivery" => true,
             "person_capacity" => 2,
         ]);
-        // GH 16000
+        // GSS 16XL
         Product::factory()->create([
-            "slug" => "gh16000",
-            "name" => "GH16000",
+            "slug" => "gss16xl",
+            "name" => "GSS16XL",
             "type" => "Generation Hot Tubs",
             "caption" => "",
             "measurement" => '192" x 92" x 56"',

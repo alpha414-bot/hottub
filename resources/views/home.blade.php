@@ -219,10 +219,6 @@
     <!--</section>-->
     <section class="relative bg-white pb-6">
         <div class="relative z-10 bg-gray-300 text-gray-800 py-8 lg:pt-16 lg:pb-24">
-            <div class="hidden absolute w-full -top-2 inset-0 z-50 overflow-hidden bg-cover bg-no-repeat pointer-events-none bg-top lg:block"
-                style="background-image: url('{{ asset('/img/luxury_wavy.svg') }}');">
-                <h2></h2>
-            </div>
             <div class="md:py-6">
                 <div class="px-4 lg:px-48 space-y-3">
                     <h2 class="text-5xl text-center ">Luxury without compromise.</h2>

@@ -51,9 +51,11 @@
                 <span class="text-gray-600">{{ $product->name }}</span>
             </div>
             <div class="xl:sticky top-0 py-4 h-auto z-30" id="lightgallery">
-                <a href="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}">
-                    <img src="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
-                        alt="{{ $product->name }} Image" class="w-1/2 mx-auto">
+                <a href="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
+                    class="block p-4 bg-gray-200 rounded-lg w-full md:w-3/4 mx-auto">
+                    <div class="block w-full h-72 bg-contain bg-center bg-no-repeat md:h-96"
+                        style="background-image: url('{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}')">
+                    </div>
                 </a>
             </div>
             <div class="space-y-5 xl:py-12 px-8 bg-gray-200">
@@ -132,8 +134,8 @@
                             @isset($product->specifications['features']['Warranty'])
                                 <li role="presentation">
                                     <button class="inline-block pl-4 pr-8 py-3 rounded-lg" id="warranty-tab"
-                                        data-tabs-target="#warranty" type="button" role="tab"
-                                        aria-controls="warranty" aria-selected="false">Warranty</button>
+                                        data-tabs-target="#warranty" type="button" role="tab" aria-controls="warranty"
+                                        aria-selected="false">Warranty</button>
                                 </li>
                             @endisset
                         </ul>
@@ -214,7 +216,7 @@
                         @isset($product->specifications['features']['Warranty'])
                             <div class="hidden p-4" id="warranty" role="tabpanel" aria-labelledby="warranty-tab">
                                 <span class="underline underline-offset-2 decoration-dotted font-medium">Current warrant on
-                                    {{$product->name}}:</span>
+                                    {{ $product->name }}:</span>
                                 {!! $product->specifications['features']['Warranty'] !!}
                             </div>
                         @endisset

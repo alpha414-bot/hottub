@@ -80,8 +80,6 @@
                             <div class="w-full h-72 bg-contain bg-center bg-no-repeat"
                                 style="background-image: url('{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}')">
                             </div>
-                            {{-- <img src="{{ asset('/img/products/' . $product->slug . '_' . $product->images[0]) }}"
-                                alt="{{ $product->name }} Image"> --}}
                         </div>
                         <p class="text-lg font-bold text-center">{{ $product->name }}</p>
                     </a>
