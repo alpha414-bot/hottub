@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $appname = getenv("APP_NAME");
         // GSS12
         Product::factory()->create([
             "slug" => "gss12",
@@ -32,13 +31,17 @@ class DatabaseSeeder extends Seeder
                     "Solid ABS Floor System" => "Yes",
                     "Topside Control, Digital Display" => "Yes",
                     "Balboa Electrical Equipment" => "Yes",
-                    "EVA Foam" => "Yes"
+                    "EVA Foam" => "Yes",
+                    "Standard Features" => "TemperBase™ Insulation<br/>Pristine Filtration<br/>Reflections Jets™ Stainless Finish<br/>Highlights™ Lighting LED<br/>EverPure™ Ozone System with EverLite™<br/>ProView™ Control Center<br/>Locking Safety Thermal Cover<br/>SplashTrax™ Step Treads",
+                    "Exclusive Add-Ons" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Exclusive Options" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Warranty" => "35 structure/15 finish/5 component/3 labor",
                 ],
                 "technical" => [
                     "Dimensions" => '144" x 90" x 48"',
                     "Two Tone Jets" => 24,
                     "Sqft Filter" => 100,
-                    "Volume" => "1100 US Gallons",
+                    "Gallons" => 1100,
                     "Dry Weight" => 1500,
                     "Filled Weight" => 10300,
                 ]
@@ -64,7 +67,11 @@ class DatabaseSeeder extends Seeder
                     "Balboa Electrical Equipment" => "Yes",
                     "Topside Control, Digital Display" => "Yes",
                     "LED Waterfalls" => "2",
-                    "EVA Foam" => "Yes"
+                    "EVA Foam" => "Yes",
+                    "Standard Features" => "TemperBase™ Insulation<br/>Pristine Filtration<br/>Reflections Jets™ Stainless Finish<br/>Highlights™ Lighting LED<br/>EverPure™ Ozone System with EverLite™<br/>ProView™ Control Center<br/>Locking Safety Thermal Cover<br/>SplashTrax™ Step Treads",
+                    "Exclusive Add-Ons" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Exclusive Options" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Warranty" => "35 structure/15 finish/5 component/3 labor",
                 ],
                 "technical" => [
                     "Dimensions" => '192" x 92" x 56"',
@@ -91,6 +98,10 @@ class DatabaseSeeder extends Seeder
                     "LED Lights" => "(12) LED Light",
                     "Exclusive Features" => 'Deluxe Cover, K.1000 Digital Topside, UV Ozonator, Rmax® Insulation, 5" LED Footwell Light, Ash or Coastal Gray Skirting, Comfortable Headrests, Sterling Marble Acrylic Standard.',
                     "Premium Options" => "Therapy & Fitness / Endurance",
+                    "Standard Features" => "TemperBase™ Insulation<br/>Pristine Filtration<br/>Reflections Jets™ Stainless Finish<br/>Highlights™ Lighting LED<br/>EverPure™ Ozone System with EverLite™<br/>ProView™ Control Center<br/>Locking Safety Thermal Cover<br/>SplashTrax™ Step Treads",
+                    "Exclusive Add-Ons" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Exclusive Options" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Warranty" => "35 structure/15 finish/5 component/3 labor",
                 ],
                 "technical" => [
                     "Dimensions" => '192" x 92" x 56"',
@@ -118,6 +129,10 @@ class DatabaseSeeder extends Seeder
                     "LED Lights" => "(20) LED Light",
                     "Exclusive Features" => 'Exercise Equipment, Deluxe Cover, K.1000 Digital Topside, UV Ozonator, Rmax® Insulation, In.Stream Stereo, 5" LED Footwell Light, Ash or Coastal Gray Skirting, Comfortable Headrests, Sterling Marble Acrylic Standard.',
                     "Premium Options" => "Recreation & Swim & Fitness / Fast Sprint",
+                    "Standard Features" => "TemperBase™ Insulation<br/>Pristine Filtration<br/>Reflections Jets™ Stainless Finish<br/>Highlights™ Lighting LED<br/>EverPure™ Ozone System with EverLite™<br/>ProView™ Control Center<br/>Locking Safety Thermal Cover<br/>SplashTrax™ Step Treads",
+                    "Exclusive Add-Ons" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Exclusive Options" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Warranty" => "35 structure/15 finish/5 component/3 labor",
                 ],
                 "technical" => [
                     "Dimensions" => '92" x 168" x 55"',
@@ -145,6 +160,10 @@ class DatabaseSeeder extends Seeder
                     "LED Lights" => "(26) LED Light",
                     "Exclusive Features" => 'Exercise Equipment, Deluxe Cover, K.1000 Digital Topside, UV Ozonator, Rmax® Insulation, In.Stream Stereo, 5" LED Footwell Light, Ash or Coastal Gray Skirting, Comfortable Headrests, Sterling Marble Acrylic Standard.',
                     "Premium Options" => "Recreation & Swim & Fitness",
+                    "Standard Features" => "TemperBase™ Insulation<br/>Pristine Filtration<br/>Reflections Jets™ Stainless Finish<br/>Highlights™ Lighting LED<br/>EverPure™ Ozone System with EverLite™<br/>ProView™ Control Center<br/>Locking Safety Thermal Cover<br/>SplashTrax™ Step Treads",
+                    "Exclusive Add-Ons" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Exclusive Options" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Warranty" => "35 structure/15 finish/5 component/3 labor",
                 ],
                 "technical" => [
                     "Dimensions" => '92" x 192" x 60"',
@@ -172,6 +191,10 @@ class DatabaseSeeder extends Seeder
                     "LED Lights" => "(37) LED Light",
                     "Exclusive Features" => 'Exercise Equipment, Deluxe Cover, K.1000 Digital Topside, UV Ozonator, Rmax® Insulation, In.Stream Stereo, 5" LED Footwell Light, Ash or Coastal Gray Skirting, Comfortable Headrests, Sterling Marble Acrylic Standard.',
                     "Premium Options" => "Therapy & Fitness",
+                    "Standard Features" => "TemperBase™ Insulation<br/>Pristine Filtration<br/>Reflections Jets™ Stainless Finish<br/>Highlights™ Lighting LED<br/>EverPure™ Ozone System with EverLite™<br/>ProView™ Control Center<br/>Locking Safety Thermal Cover<br/>SplashTrax™ Step Treads",
+                    "Exclusive Add-Ons" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Exclusive Options" => "Eclipse™ Lighting<br/>WAVE™ WiFi Wireless Control<br/>AquaCross™ Tether Trainer<br/>AquaForce™ Pulley Trainer<br/>SplashMat Pak™ Steps, Seats, Floor Mat<br/>Oasis™ LED Lighting<br/>EverPure2™ UV-C Purification with EverLite2™<br/>BlueTune Audio<br/>AquaCross System",
+                    "Warranty" => "35 structure/15 finish/5 component/3 labor",
                 ],
                 "technical" => [
                     "Dimensions" => '92" x 244" x 55"',
