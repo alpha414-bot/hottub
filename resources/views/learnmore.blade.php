@@ -156,7 +156,7 @@
                                                 @if ($slug_key != 'warranty' && $slug_key != 'standard-features' && $slug_key != 'exclusive-add-ons')
                                                     <tr class=" border-b border-gray-500">
                                                         <th scope="row"
-                                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                                            class="px-6 py-4 font-medium text-gray-900 md:whitespace-nowrap">
                                                             {{ $key }}
                                                         </th>
                                                         <td class="px-6 py-4">
