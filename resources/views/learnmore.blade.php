@@ -160,22 +160,25 @@
                     @endif
                 </div>
             </section>
-            @if (count($product->features) > 0)
-                <section
-                    class="hidden w-full bg-hot-700 grid-cols-{{ count($product->features) }} gap-x-2 justify-ly px-24 py-10 xl:grid">
-                    @foreach ($product->features as $feature)
-                        <div class="flex flex-col items-start justify-start gap-y-3 text-center text-white">
-                            <div class="mx-auto bg-cover bg-center bg-no-repeat w-44 h-44 rounded-full border-[5px] border-white"
-                                style="background-image: url('{{ asset('/img/products/featuring/' . $feature['img']) }}')">
+            @isset($product->features)
+                @if (count($product->features) > 0)
+                    <section
+                        class="hidden w-full bg-hot-700 grid-cols-{{ count($product->features) }} gap-x-2 justify-ly px-24 py-10 xl:grid">
+                        @foreach ($product->features as $feature)
+                            <div class="flex flex-col items-start justify-start gap-y-3 text-center text-white">
+                                <div class="mx-auto bg-cover bg-center bg-no-repeat w-44 h-44 rounded-full border-[5px] border-white"
+                                    style="background-image: url('{{ asset('/img/products/featuring/' . $feature['img']) }}')">
+                                </div>
+                                <div class="mt-2 space-y-1 px-3">
+                                    <p class="text-2xl font-medium">{{ $feature['title'] }}</p>
+                                    <p class="hidde whitespace-pre-wrap">{{ $feature['description'] }}</p>
+                                </div>
                             </div>
-                            <div class="mt-2 space-y-1 px-3">
-                                <p class="text-2xl font-medium">{{ $feature['title'] }}</p>
-                                <p class="hidde whitespace-pre-wrap">{{ $feature['description'] }}</p>
-                            </div>
-                        </div>
-                    @endforeach
-                </section>
-            @endif
+                        @endforeach
+                    </section>
+                @endif
+
+            @endisset
             <div class="px-4 py-4 space-y-8 md:px-8 xl:px-24 md:py-10">
                 {{-- Top Showcase --}}
                 <section>
@@ -272,13 +275,15 @@
                                         <tbody>
                                             @foreach ($product->specifications['features'] as $key => $value)
                                                 @if ($key != 'therapy_pump_hp')
-                                                    <tr class=" border-b border-gray-500">
+                                                    <tr class=" border-b border-gray-500 align-top">
                                                         <th scope="row"
                                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                                             {{ $key }}
                                                         </th>
                                                         <td class="px-6 py-4">
-                                                            {{ $key == 'Therapy Pumps' ? $value . ' Dual-Speed (' . $product->specifications['features']['therapy_pump_hp'] . '.0 hp) ' : $value }}
+                                                            {!! $key == 'Therapy Pumps'
+                                                                ? $value . ' Dual-Speed (' . $product->specifications['features']['therapy_pump_hp'] . '.0 hp) '
+                                                                : $value !!}
                                                         </td>
                                                     </tr>
                                                 @endif
@@ -291,13 +296,13 @@
                                     <table class="w-full text-sm text-left rtl:text-right text-gray-900">
                                         <tbody>
                                             @foreach ($product->specifications['technical'] as $key => $value)
-                                                <tr class="border-b border-gray-500">
+                                                <tr class="border-b border-gray-500 align-top">
                                                     <th scope="row"
                                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                                         {{ $key }}
                                                     </th>
                                                     <td class="px-6 py-4">
-                                                        {{ $value }}
+                                                        {!! $value !!}
                                                         {{ $key == 'Dry Weight' || $key == 'Filled Weight' ? 'lbs.' : '' }}
                                                         {{ $key == 'Water Capacity' ? 'gallons' : '' }}
                                                         {{ $key == 'Filters' ? 'sq. ft.' : '' }}
@@ -314,7 +319,7 @@
                                 @foreach ($product->warranty as $key => $value)
                                     <p class="space-x-1">
                                         <span class="font-bold">{{ $key }}:</span>
-                                        <span class="">{{ $value }}</span>
+                                        <span class="">{!! $value !!}</span>
                                     </p>
                                 @endforeach
                                 <p class="">See additional warranty information <a

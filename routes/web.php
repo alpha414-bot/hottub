@@ -2,6 +2,7 @@
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -105,3 +106,10 @@ Route::get('/privacy-policy', function () {
         ]
     ]);
 })->name('privacy-policy');
+
+// Database Migrating
+Route::get('/server/database', function () {
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
+    return response()->json(['message' => 'Database refreshed and seeded successfully']);
+})->name('refresh-database');
