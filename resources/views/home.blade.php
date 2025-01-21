@@ -72,7 +72,7 @@
                         {{ Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration']) }}
                     </p>
                 </div>
-                <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More {{$telephone}}</div>
+                <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
             </a>
         @endforeach
     </section>
