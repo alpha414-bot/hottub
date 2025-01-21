@@ -24,16 +24,16 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         //
-        View::share('appname', getenv('APP_NAME'));
+        View::share('appname', config('app.name'));
         View::share('logo', asset("/img/logo.png"));
         View::share('white_logo', asset("/img/white-logo.png"));
-        View::share('address', getenv("ADDRESS"));
-        View::share("map_address", getenv("MAP_ADDRESS"));
-        View::share("telephone", getenv("TELEPHONE"));
-        View::share("mail", getenv("MAIL"));
-        View::share("facebook_link", getenv("FACEBOOK_LINK"));
-        View::share("linkedin_link", getenv("LINKEDIN_LINK"));
-        View::share("instagram_link", getenv("INSTAGRAM_LINK"));
-        View::share("twitter_link", getenv("TWITTER_LINK"));
+        View::share('address', config("app.address"));
+        View::share("map_address", config("app.map_address"));
+        View::share("telephone", config("app.telephone"));
+        View::share("mail", config("app.mail"));
+        View::share("facebook_link", config("app.facebook_link"));
+        View::share("linkedin_link", config("app.linkedin_link"));
+        View::share("instagram_link", config("app.instagram_link"));
+        View::share("twitter_link", config("app.twitter_link"));
     }
 }

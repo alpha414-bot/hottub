@@ -53,7 +53,8 @@ Route::get('/contact-us', function () {
 })->name('contact-us');
 
 Route::post("/contact-us", function (Request $request) {
-    $name = getenv('APP_NAME');
+    $name = config('app.name');
+    $mail_to = config('app.mail_to_address');
     $request->validate([
         'subject' => 'required|string',
         'name' => 'required|string',
@@ -63,8 +64,8 @@ Route::post("/contact-us", function (Request $request) {
     ]);
     // Send email
     $data = $request->all();
-    Mail::send('mail', $data, function ($message) use ($data, $name) {
-        $message->to(getenv('MAIL_TO_ADDRESS'), getenv('APP_NAME'))
+    Mail::send('mail', $data, function ($message) use ($data, $mail_to, $name) {
+        $message->to($mail_to, $name)
             ->subject("New Message Request | " . $data['name']);
         // ->subject($name . " warehouse - " . $data['subject'] . " from " . $data['name']);
     });
@@ -83,7 +84,7 @@ Route::get('/about-us', function () {
 
 // Privacy Policy Page
 Route::get('/privacy-policy', function () {
-    $name = getenv('APP_NAME');
+    $name = config('app.name');
     $termsOfService = file_get_contents(resource_path('terms_of_service.txt'));
     $termsOfService = str_replace('{{$name}}', $name, $termsOfService);
     $howwecollectAndUse = file_get_contents(resource_path('how_we_collect_and_use_your_personal_information.txt'));
