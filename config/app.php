@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /**
+     * APPLICATION CONFIg STATE
+     */
+    "address" => env("ADDRESS", ""),
+    "map_address" => env("MAP_ADDRESS", ""),
+    "telephone" => env("TELEPHONE", ""),
+    "mail" => env("MAIL", ""),
+    "facebook_link" => env("FACEBOOK_LINK", ""),
+    "linkedin_link" => env("LINKEDIN_LINK", ""),
+    "instagram_link" => env("INSTAGRAM_LINK", ""),
+    "twitter_link" => env("TWITTER_LINK", ""),
+    "mail_to_address" => env("MAIL_TO_ADDRESS", "")
 ];

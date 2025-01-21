@@ -70,7 +70,7 @@
                         {{ Str::replace(' + 1 Lounger', '', $product->specifications['features']['Seating Configuration']) }}
                     </p>
                 </div>
-                <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More</div>
+                <div class="cursor-pointer inline-block mx-auto learn-more-btn mt-2">Learn More {{$appname}} {{$telephone}}</div>
             </a>
         @endforeach
     </section>
@@ -243,7 +243,7 @@
             class="relative z-20 grid grid-cols-3 gap-x-4 gap-y-4 py-8 px-4 lg:-mt-[5%] lg:grid-cols-7 lg:gap-x-14 md:gap-y-8 lg:px-32 lg:py-0">
             @foreach ($animals as $animal)
                 <div class="space-y-4">
-                    <a href="{{ route('learn-more', ['name' => $animal->name,]) }}"> 
+                    <a href="{{ route('learn-more', ['name' => $animal->name,]) }}">
                         <img src="{{ asset('/img/products/' . $animal->slug . '/' . $animal->images[0]) }}"
                         alt="{{ $animal->name }} Logo" class="" />
                     </a>

@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $appname = getenv("APP_NAME");
+        $appname = config("app.name");
         // THE ELEPHANT (HS8L)
         Product::factory()->create([
             "slug" => "elephant",
