@@ -317,8 +317,9 @@
                         <div class="hidden p-4" id="warranty" role="tabpanel" aria-labelledby="warranty-tab">
                             <div class="space-y-4 text-base">
                                 @foreach ($product->warranty as $key => $value)
-                                    <p class="space-x-1">
-                                        <span class="font-bold">{{ $key }}:</span>
+                                    <p class="space-x-1 {{ $product->type == 'earth-spas' ? 'flex flex-col' : '' }}">
+                                        <span
+                                            class="{{ $product->type == 'earth-spas' ? 'font-medium text-xl' : 'font-bold' }}">{{ $key }}:</span>
                                         <span class="">{!! $value !!}</span>
                                     </p>
                                 @endforeach

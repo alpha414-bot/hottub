@@ -395,7 +395,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "kouri",
             "name" => "ES5DL",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for couple/Space Restrictions for up to 3 people",
             "short_description" => "Compact dual lounge spa",
@@ -442,15 +442,21 @@ class DatabaseSeeder extends Seeder
                 ]
             ],
             "warranty" => [
-                "Stainless Steel Frame" => "Lifetime",
-                "Shell Surface" => "5 Years",
-                "Shell Structure" => "5 Years",
-                "Plumbing" => "2 Years",
-                "Internal Components" => "2 Years",
-                "Exterior Cabinet" => "2 Years",
-                "Jets, Ozone, Lighting" => "1 Year",
-                "Cover, Lifter, Steps" => "1 Year",
-                "Filter Lids, Overlays, Pillows, Cover Locks" => "90 days"
+                "10-years structural warranty" => "The manufacturer warrants the stainless steel structure of the spa against defects in workmanship or materials for a period of 10 years from date of delivery subject to the limitations and conditions expressed in this warranty.",
+                "5-years warranty on the acrylic shell structure" => "The shell will maintain its structural integrity and configuration and will be free of any water loss due to a defect in the spa shell.<br/>5-years warranty on the shell surface of the spa<br/>The manufacturer provides a 5-year warranty against blistering, cracking and delamination.",
+                "SPA PLUMBING & COMPONENT WARRANTY" => "3-years warranty on spa control box & display module<br/>The manufacturer warrants the display and the spa control box against defects in the materials and workmanship or any defect for 3 years. This is with the exception of fuses, bulbs and gaskets which are deemed as perishable and replaceable items.",
+                "3-years warranty on spa electrical heater" => "The manufacturer warrants the heater against defects in materials and workmanship for a period of 3 years from date of delivery. This warranty is limited to the supply of replacement parts. This warranty does not cover damage to heaters caused by an incorrect water balance resulting in the heater being subjected to abrasive/acidic water.",
+                "3-years warranty on spa heat pump" => "The manufacturer warrants the heater against defects in materials and workmanship for a period of 3 years from date of delivery. This warranty is limited to the supply of replacement parts. This warranty does not cover damage to heaters caused by an incorrect water balance resulting in the heater being subjected to abrasive/acidic water.",
+                "3-years warranty on spa pumps" => "The manufacturer warrants the spa water pumps against defects in materials and workmanship for a period of 3 years from date of delivery. Sudden and consistent water loss must be reported to the seller as soon as possible. Damage to the pump motor caused by a pump leaking for an extended period without notifying the seller will not be covered under this warranty.",
+                "3-years internal plumbing warranty" => "The manufacturer warrants the plumbing, piping and plumbing joints against defects in materials and workmanship for a period of 3 years from the date of delivery.",
+                "1-year warranty on other electrical items" => "The manufacturer warrants the factory installed Bluetooth music module, speakers, amplifier and sub-woofer, spa ozone module, the LED light assemblies, which consists of all lights within the spa, including the main light and lighting of any water feature, to be free from defects in materials and workmanship for 1 year.",
+                "2-years warranty on spa jet internals" => "The manufacturer warrants jet internals to be free of manufacturing defects for a period of 2 years from date of delivery. This warranty excludes bearings damaged by grit, sand and improper water chemistry causing corrosion of the part and is limited to the supply of replacement parts after the faulty part has been returned to the manufacturer for warranty inspection.",
+                "1-year warranty on plastic control parts" => "The manufacturer warrants the plastic control parts such as diverters and air controllers against defects in materials and workmanship for a period of 1 year from the date of delivery. This warranty excludes damage by grit, sand and improper water chemistry causing corrosion of the part and is limited to the supply of replacement parts after the faulty part has been returned to the manufacturer for warranty inspection.",
+                "1-year warranty on THERMOCLAD cabinet & spa step" => "The manufacturer warrants the THERMOCLAD spa cabinet and step against defects in materials and workmanship for a period of 1 year from the date of delivery. This warranty specifically covers the structural integrity of the cabinet, namely peeling, splitting, cracking, warping. The THERMOCLAD spa cabinet and step finish is warranted to be free from defects in materials and workmanship at the time of initial delivery. Fading and weathering of the surface will occur naturally over time and are not considered defects.",
+                "1-year spa hardcover warranty" => "The manufacturer warrants the SPA hardcover against defects in materials and workmanship for a period of 1 year from the date of delivery. This warranty applies only to the structural integrity of the cover and the vinyl. Damage caused to stitching, straps or locks due to improper use of the cover will not be covered under warranty. Disposal of any cover replaced under warranty will be the owner's responsibility.",
+                "90-days warranty on all other fixtures and furnishings" => "The manufacturer warrants all other parts not previously mentioned for 90 days from the date of delivery. This applies to items such as filter housing, topside display sticker. Items that can be replaced without the use of a tool such as filter cartridges, filter lid, spa pillows, cover locks etc. are not included in the warranty but are warranted to be free from defects in materials and workmanship at the time of delivery.",
+                "WARRANTY LIMITATIONS" => "<ol><li>The warranty does not cover damage caused by misuse, lack of maintenance, limescale deposits or corrosive acidicstaining and fading caused by water chemistry imbalance.</li><li>The shell surface warranty does not cover damage caused by the use of household cleaning chemicals, prolonged exposure to direct sunlight, use of Trichlor (chlorine tablets) or excessive water chemistry imbalance.</li><li>The manufacturer reserves the right to replace the defective parts with factory or remanufactured parts.</li><li>The manufacturer is not responsible for any damage caused by alterations or modifications by the user.</li><li>Radio/Bluetooth reception is not covered by the warranty because the reception depends on local conditions. The received signal may deteriorate if there are high voltage lines near the spa.</li><li>The warranty of the spa does not cover defects, damage or failure caused by the common carrier, installer, user or other persons, pets, or rodents, or resulting from, without limitations, any of the following: careless handling (lifting unit plumbing, abrading finish, etc.) including its own negligence; modification of any type for any reason (including modification to meet local codes); improper installation (including installation not in accordance with instructions and specifications provided with the unit); connections supplied by the installer of the equipment; improper voltage supply or unauthorized electrical modification; misuse; incorrect operation, or lack of proper routine maintenance; operation of the unit without the specified minimum amount of water or at inappropriate water temperature; use of abrasive or improper cleaners; or acts of nature, such as lightning, floods, earthquakes etc.</li><li>In addition, The manufacturer will not be responsible for incidental or consequential damages or losses arising from any cause (e.g. water damage to carpet, ceiling, tiles, hard surfaces, loss of use etc.) Material or cosmetic damages resulting from the spa being an ex-display unit are not included in this warranty and should be noted with your dealer prior to delivery and installation.</li><li>This warranty does not include: labour to rectify a faulty spa but may or may not be offered by your spa dealer; labour, transportation or other costs incurred in the removal and/ or reinstallation of the original unit and/or installation of a replacement unit; any costs relating to obtaining access for repair; or loss of use damage, including loss of sales, profit or business advantage of any kind under any circumstances. Spa units are excluded from any warranty coverage in any addition, deletion or modification of any kind whatsoever has been made to the unit (or to any component).</li><li>The warranty does not cover defects or damage due to normal wear and tear, improper installation, alterations without the manufacturer written consent, accident, misuse, abuse, commercial or industrial use, use of an accessory not approved by the manufacturer, failure to follow the user manual, or repairs made or attempted by anyone other than an authorized representative of the manufacturer.</li><li>The manufacturer will not provide compensation for delays in rectifying a faulty/broken spa.</li></ol>",
+                "Extent of Warranty" => "This warranty extends only to the original consumer purchaser of the spa when invoiced and delivered. The warrantyterminates upon any transfer of the ownership, prior to the expiration of the warranty period. Any modifications to the spa will void the warranty.",
             ],
             "free_delivery" => true,
             "free_cover" => true,
@@ -463,7 +469,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "uluru",
             "name" => "ES6DL",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for couple plus friends for up to 4 people",
             "short_description" => "Compact dual lounge spa",
@@ -533,7 +539,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "erebus",
             "name" => "ES6L",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for Couples/small family for up to 5 people",
             "short_description" => "Compact single lounge spa",
@@ -603,7 +609,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "mariana",
             "name" => "ES7L",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for families for up to 6 people",
             "short_description" => "Versatile family spa with lounger",
@@ -673,7 +679,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "glencoe",
             "name" => "ES7NL",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for family and gatherings for up to 7 people",
             "short_description" => "Social spa with maximum comfort",
@@ -743,7 +749,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "halongbay",
             "name" => "ES8DL",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for hosting/Entertaining for up to 5 people",
             "short_description" => "Dual lounge statement spa",
@@ -813,7 +819,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             "slug" => "kernriver",
             "name" => "ES8L",
-            "type" => "full-powered-hot-tubs",
+            "type" => "earth-spas",
             "caption" => "Includes Cover and Color-Matching Steps",
             "long_caption" => "Ideal for hosting/Entertaining for up to 5 people",
             "short_description" => "Powerhouse Spa",

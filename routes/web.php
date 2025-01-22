@@ -33,7 +33,7 @@ Route::get('/hot-tubs', function () {
 // List all Earth Spas
 Route::get('/earth-spas', function () {
     return view("earthspas", [
-        'fully_powered' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'full-powered-hot-tubs')->get(),
+        'fully_powered' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'earth-spas')->get(),
     ]);
 })->name('earth-spas');
 
