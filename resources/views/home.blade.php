@@ -109,7 +109,7 @@
     <section class="py-12" id="best_sellers">
         <h2 class="text-5xl text-center md:text-7xl">BEST SELLERS</h2>
         <div class="flex flex-col items-center justify-center mt-12 mb-4">
-            <a href="{{ route('hot-tubs') }}"
+            <a href="{{ route('hydro-series') }}"
                 class="inline-block mx-auto bg-hot-700/55 px-4 py-1.5 text-lg font-semibold text-white">ALL HOT TUBS</a>
             <div class="w-full px-2 py-5 relative lg:px-24">
                 <button type="button" id="prevArrow" data-slick="product-slick"
@@ -199,7 +199,7 @@
                         hydrotherapy with a
                         full&shy;powered (220V)
                         hot tub.</p>
-                    <a href="{{ route('hot-tubs') }}"
+                    <a href="{{ route('hydro-series') }}"
                         class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn
                         More</a>
                 </div>
@@ -211,7 +211,7 @@
                     <h2 class="text-4xl font-normal ">Plug-and-Play Hot Tubs</h2>
                     <p class="hyphens-manual text-base font-normal">Experience the simplicity of a plug-and-play hot
                         tub, without compromising on quality.</p>
-                    <a href="{{ route('hot-tubs') }}"
+                    <a href="{{ route('hydro-series') }}"
                         class="inline-block px-5 py-2 rounded-3xl border border-hot-500 transition-all duration-100 hover:bg-hot-500 focus:outline-2 focus:outline-hot-500">Learn
                         More</a>
                 </div>

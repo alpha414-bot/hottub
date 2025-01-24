@@ -19,13 +19,13 @@ Route::get('/', function () {
 })->name('home');
 
 // List all Hot Tubs
-Route::get('/hot-tubs', function () {
+Route::get('/hydro-series', function () {
     return view("hottubs", [
         'fully_powered' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'full-powered-hot-tubs')->get(),
         'plug_and_play' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'plug-and-play-hot-tubs')->get(),
         'cold_spas' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'cold-spas')->get(),
     ]);
-})->name('hot-tubs');
+})->name('hydro-series');
 
 // List all Earth Spas
 Route::get('/earth-spas', function () {

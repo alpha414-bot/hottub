@@ -78,7 +78,7 @@
             <p class="text-base">{{ $appname }} Outdoor Living</p>
             <p class="flex items-center gap-3"><x-feathericon-phone class="w-5 h-5" /><span>{{ $telephone }}</span>
             </p>
-            <p class="flex items-center gap-3"><x-feathericon-mail class="w-5 h-5" /><span>{{ $mail }}</span>
+            <p class="flex items-center gap-3"><x-feathericon-mail class="w-5 h-5" /><span>sales@gulfsouthoutdoorliving.com</span>
             </p>
         </div>
     </form>

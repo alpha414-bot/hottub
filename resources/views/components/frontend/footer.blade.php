@@ -1,7 +1,9 @@
 {{--  --}}
 @php
     $footer_links = [
-        ['text' => 'Hot Tubs', 'link' => route('hot-tubs')],
+        ['text' => 'Hydro Series', 'link' => route('hydro-series')],
+        ['text' => 'Earth Spas', 'link' => route('earth-spas')],
+        ['text' => 'Generation Hot Tubs', 'link' => route('generation-hottubs')],
         ['text' => 'Why Choose Us?', 'link' => route('about-us')],
         ['text' => 'Contact Us', 'link' => route('contact-us')],
         ['text' => 'Privacy Policy', 'link' => route('privacy-policy')],
@@ -49,7 +51,7 @@
                 <li class="hidden w-1.5 h-1.5 bg-white rounded-full xl:block"></li>
                 <li>
                     <a href="mailto:{{ $mail }}"
-                        class="hover:underline hover:underline-offset-2 decoration-white">{{ $mail }}</a>
+                        class="hover:underline hover:underline-offset-2 decoration-white">sales@gulfsouthoutdoorliving.com</a>
                 </li>
             </ul>
         </div>

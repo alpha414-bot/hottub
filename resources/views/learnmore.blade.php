@@ -28,10 +28,20 @@
     </x-slot>
     {{-- Quick Intro --}}
     <x-frontend.intro />
+    @php
+        $link = route('hydro-series');
+        if ($product->type == 'earth-spas') {
+            # code...
+            $link = route('earth-spas');
+        } elseif ($product->type == 'generation-hottubs') {
+            # code...
+            $link = route('generation-hottubs');
+        }
+    @endphp
     <main class="py-4 space-y-8">
         <div class="z-10 px-4 xl:px-24 grid md:grid-cols-2 items-start gap-x-8 gap-y-4 xl:pb-32">
             <div class="block gap-2 md:hidden">
-                <a href="{{ route('hot-tubs') }}" class="text-hot-700 hover:underline underline-offset-2">All
+                <a href="{{ $link }}" class="text-hot-700 hover:underline underline-offset-2">All
                     Products</a>
                 <span>/</span>
                 <span class="text-gray-600">{{ $product->name }}</span>
@@ -44,7 +54,7 @@
             <div class="space-y-5 xl:py-12">
                 {{-- Breadcrumb --}}
                 <div class="hidden gap-2 md:block">
-                    <a href="{{ route('hot-tubs') }}" class="text-hot-700 hover:underline underline-offset-2">All
+                    <a href="{{ $link }}" class="text-hot-700 hover:underline underline-offset-2">All
                         Products</a>
                     <span>/</span>
                     <span class="text-gray-600">{{ $product->name }}</span>

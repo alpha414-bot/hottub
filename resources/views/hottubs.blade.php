@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Hot Tubs
+        Hydro Series
     </x-slot>
 
     <x-slot:meta>
