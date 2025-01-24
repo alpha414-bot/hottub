@@ -315,17 +315,26 @@
                             </div>
                         </div>
                         <div class="hidden p-4" id="warranty" role="tabpanel" aria-labelledby="warranty-tab">
-                            <div class="space-y-4 text-base">
-                                @foreach ($product->warranty as $key => $value)
-                                    <p class="space-x-1 {{ $product->type == 'earth-spas' ? 'flex flex-col' : '' }}">
-                                        <span
-                                            class="{{ $product->type == 'earth-spas' ? 'font-medium text-xl' : 'font-bold' }}">{{ $key }}:</span>
-                                        <span class="">{!! $value !!}</span>
-                                    </p>
-                                @endforeach
-                                <p class="">See additional warranty information <a
-                                        href="{{ route('warranty') }}">here</a>.</p>
-                            </div>
+                            @isset($product->warranty)
+                                <div class="space-y-4 text-base">
+                                    @if ($product->type == 'generation-hottubs')
+                                        <div>
+                                            {!! $product->warranty !!}
+                                        </div>
+                                    @else
+                                        @foreach ($product->warranty as $key => $value)
+                                            <p
+                                                class="space-x-1 {{ $product->type == 'earth-spas' ? 'flex flex-col' : '' }}">
+                                                <span
+                                                    class="{{ $product->type == 'earth-spas' ? 'font-medium text-xl' : 'font-bold' }}">{{ $key }}:</span>
+                                                <span class="">{!! $value !!}</span>
+                                            </p>
+                                        @endforeach
+                                    @endif
+                                    <p class="">See additional warranty information <a
+                                            href="{{ route('warranty') }}">here</a>.</p>
+                                </div>
+                            @endisset
                         </div>
                     </div>
                 </section>

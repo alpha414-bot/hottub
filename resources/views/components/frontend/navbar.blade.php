@@ -27,6 +27,8 @@
         <li><a href="{{ route('earth-spas') }}"
                 class="{{ Route::currentRouteName() === 'earth-spas' ? 'bg-hot-700 text-white' : '' }} py-2 px-4 rounded-md">Earth
                 Spas</a></li>
+        <li><a href="{{ route('generation-hottubs') }}"
+                class="{{ Route::currentRouteName() === 'generation-hottubs' ? 'bg-hot-700 text-white' : '' }} py-2 px-4 rounded-md">Generation Tubs</a></li>
         <li><a href="{{ route('about-us') }}"
                 class="{{ Route::currentRouteName() === 'about-us' ? 'bg-hot-700 text-white' : '' }} py-2 px-4 rounded-md">About
                 Us</a></li>

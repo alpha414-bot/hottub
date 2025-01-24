@@ -11,12 +11,9 @@ use Stevebauman\Location\Facades\Location;
 
 // Homepage
 Route::get('/', function () {
-    // $animals = array_map(function ($animal) {
-    //     return Str::slug($animal["slug"]);
-    // }, $animals->toArray());
     return view('home', [
         "products_intro" => Product::select("slug", "name", "images", "measurement", "specifications")->take(5)->get(),
-        "all_products" => Product::select("slug", "name", "images", "measurement", "specifications")->get(),
+        "all_products" => Product::select("slug", "name", "images", "measurement", "specifications")->where("type", "!=", "generation-hottubs")->get(),
         "animals" => Product::select("slug", "name", "images")->get()
     ]);
 })->name('home');
@@ -33,9 +30,14 @@ Route::get('/hot-tubs', function () {
 // List all Earth Spas
 Route::get('/earth-spas', function () {
     return view("earthspas", [
-        'fully_powered' => Product::select("slug", "name", "long_caption", 'type', "images", "short_description", "new", "measurement", "specifications")->where('type', 'earth-spas')->get(),
+        'fully_powered' => Product::where('type', 'earth-spas')->get(),
     ]);
 })->name('earth-spas');
+Route::get('/generation-hottubs', function () {
+    return view("generationhottubs", [
+        'products' => Product::where('type', 'generation-hottubs')->get(),
+    ]);
+})->name('generation-hottubs');
 
 // Learn more about hot tub product
 Route::get('/learn-more/{name}', function (string $name) {
