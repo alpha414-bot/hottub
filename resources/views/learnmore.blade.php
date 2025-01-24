@@ -187,7 +187,6 @@
                         @endforeach
                     </section>
                 @endif
-
             @endisset
             <div class="px-4 py-4 space-y-8 md:px-8 xl:px-24 md:py-10">
                 {{-- Top Showcase --}}
@@ -345,6 +344,57 @@
                                             href="{{ route('warranty') }}">here</a>.</p>
                                 </div>
                             @endisset
+                        </div>
+                    </div>
+                </section>
+                {{-- Accent color --}}
+                <section class="grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 mt-8">
+                    <div>
+                        <h5 class="text-xl font-medium text-center">SHELL OPTIONS</h5>
+                        <div class="flex items-center gap-8 justify-evenly mt-2">
+                            <div class="space-y-0.5">
+                                <a href="{{ asset('/img/products/color/sterling-silver.jpg') }}"
+                                    data-fslightbox="gallery">
+                                    <img src="{{ asset('/img/products/color/sterling-silver.jpg') }}"
+                                        alt="Sterling Silver">
+                                </a>
+                                <p class="italic text-center">Sterling Silver</p>
+                            </div>
+                            <div class="space-y-0.5">
+                                <a href="{{ asset('/img/products/color/tuscan-sun.jpg') }}"
+                                    data-fslightbox="gallery">
+                                    <img src="{{ asset('/img/products/color/tuscan-sun.jpg') }}" alt="Tuscan Sun">
+                                </a>
+                                <p class="italic text-center">Tuscan Sun</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="text-xl font-medium text-center">CABINET COVER</h5>
+                        <div class="flex items-center gap-8 justify-evenly mt-2">
+                            <div class="space-y-0 5">
+                                <a href="{{ asset('/img/products/color/graphite.jpg') }}" data-fslightbox="gallery">
+                                    <img src="{{ asset('/img/products/color/graphite.jpg') }}" alt="Graphite">
+                                </a>
+                                <p class="italic text-center">Graphite</p>
+                            </div>
+                            <div class="space-y-0 5">
+                                <a href="{{ asset('/img/products/color/black.jpg') }}" data-fslightbox="gallery">
+                                    <img src="{{ asset('/img/products/color/black.jpg') }}" alt="Black">
+                                </a>
+                                <p class="italic text-center">Black</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="text-xl font-medium text-center">COVERS</h5>
+                        <div class="flex items-center gap-8 justify-center mt-2">
+                            <div class="space-y-0 5">
+                                <a href="{{ asset('/img/products/color/cover-black.jpg') }}" data-fslightbox="gallery">
+                                    <img src="{{ asset('/img/products/color/cover-black.jpg') }}" alt="Black">
+                                </a>
+                                <p class="italic text-center">Black</p>
+                            </div>
                         </div>
                     </div>
                 </section>
