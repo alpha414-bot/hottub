@@ -23,6 +23,7 @@ class Product extends Model
             'bottom_showcase' => 'array',
             'specifications' => 'array',
             'warranty' => 'array',
+            'color' => 'array',
             'new' => 'boolean',
             'free_delivery' => 'boolean',
             'free_cover' => 'boolean',

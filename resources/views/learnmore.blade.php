@@ -348,56 +348,99 @@
                     </div>
                 </section>
                 {{-- Accent color --}}
-                <section class="grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 mt-8">
-                    <div>
-                        <h5 class="text-xl font-medium text-center">SHELL OPTIONS</h5>
-                        <div class="flex items-center gap-8 justify-evenly mt-2">
-                            <div class="space-y-0.5">
-                                <a href="{{ asset('/img/products/color/sterling-silver.jpg') }}"
-                                    data-fslightbox="gallery">
-                                    <img src="{{ asset('/img/products/color/sterling-silver.jpg') }}"
-                                        alt="Sterling Silver">
-                                </a>
-                                <p class="italic text-center">Sterling Silver</p>
-                            </div>
-                            <div class="space-y-0.5">
-                                <a href="{{ asset('/img/products/color/tuscan-sun.jpg') }}"
-                                    data-fslightbox="gallery">
-                                    <img src="{{ asset('/img/products/color/tuscan-sun.jpg') }}" alt="Tuscan Sun">
-                                </a>
-                                <p class="italic text-center">Tuscan Sun</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h5 class="text-xl font-medium text-center">CABINET COVER</h5>
-                        <div class="flex items-center gap-8 justify-evenly mt-2">
-                            <div class="space-y-0 5">
-                                <a href="{{ asset('/img/products/color/graphite.jpg') }}" data-fslightbox="gallery">
-                                    <img src="{{ asset('/img/products/color/graphite.jpg') }}" alt="Graphite">
-                                </a>
-                                <p class="italic text-center">Graphite</p>
-                            </div>
-                            <div class="space-y-0 5">
-                                <a href="{{ asset('/img/products/color/black.jpg') }}" data-fslightbox="gallery">
-                                    <img src="{{ asset('/img/products/color/black.jpg') }}" alt="Black">
-                                </a>
-                                <p class="italic text-center">Black</p>
+                @if ($product->type == 'generation-hottubs')
+                    <section class="grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 mt-8">
+                        <div>
+                            <h5 class="text-xl font-medium text-center">SHELL OPTIONS</h5>
+                            <div class="flex items-center gap-8 justify-evenly mt-2">
+                                <div class="space-y-0.5">
+                                    <a href="{{ asset('/img/products/color/sterling-silver.jpg') }}"
+                                        data-fslightbox="gallery">
+                                        <img src="{{ asset('/img/products/color/sterling-silver.jpg') }}"
+                                            alt="Sterling Silver">
+                                    </a>
+                                    <p class="italic text-center">Sterling Silver</p>
+                                </div>
+                                <div class="space-y-0.5">
+                                    <a href="{{ asset('/img/products/color/tuscan-sun.jpg') }}"
+                                        data-fslightbox="gallery">
+                                        <img src="{{ asset('/img/products/color/tuscan-sun.jpg') }}"
+                                            alt="Tuscan Sun">
+                                    </a>
+                                    <p class="italic text-center">Tuscan Sun</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <h5 class="text-xl font-medium text-center">COVERS</h5>
-                        <div class="flex items-center gap-8 justify-center mt-2">
-                            <div class="space-y-0 5">
-                                <a href="{{ asset('/img/products/color/cover-black.jpg') }}" data-fslightbox="gallery">
-                                    <img src="{{ asset('/img/products/color/cover-black.jpg') }}" alt="Black">
-                                </a>
-                                <p class="italic text-center">Black</p>
+                        <div>
+                            <h5 class="text-xl font-medium text-center">CABINET COVER</h5>
+                            <div class="flex items-center gap-8 justify-evenly mt-2">
+                                <div class="space-y-0 5">
+                                    <a href="{{ asset('/img/products/color/graphite.jpg') }}"
+                                        data-fslightbox="gallery">
+                                        <img src="{{ asset('/img/products/color/graphite.jpg') }}" alt="Graphite">
+                                    </a>
+                                    <p class="italic text-center">Graphite</p>
+                                </div>
+                                <div class="space-y-0 5">
+                                    <a href="{{ asset('/img/products/color/black.jpg') }}" data-fslightbox="gallery">
+                                        <img src="{{ asset('/img/products/color/black.jpg') }}" alt="Black">
+                                    </a>
+                                    <p class="italic text-center">Black</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                        <div>
+                            <h5 class="text-xl font-medium text-center">COVERS</h5>
+                            <div class="flex items-center gap-8 justify-center mt-2">
+                                <div class="space-y-0 5">
+                                    <a href="{{ asset('/img/products/color/cover-black.jpg') }}"
+                                        data-fslightbox="gallery">
+                                        <img src="{{ asset('/img/products/color/cover-black.jpg') }}" alt="Black">
+                                    </a>
+                                    <p class="italic text-center">Black</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                @elseif ($product->type == 'earth-spas')
+                    @isset($product->color)
+                        <h4 class="font-medium text-3xl text-center">COLOR OPTIONS</h4>
+                        <section class="grid grid-cols-1 md:grid-cols-4 items-stretch gap-8 px-2 md:px-4">
+                            @foreach ($product->color as $key => $value)
+                                <div>
+                                    <a href="{{ asset('img/products/' . $product->slug . '/' . $value) }}"
+                                        data-fslightbox="Color Option">
+                                        <img src="{{ asset('img/products/' . $product->slug . '/' . $value) }}"
+                                            alt="">
+                                    </a>
+                                    <p class="font-medium text-center text-lg">{{ $key }}</p>
+                                </div>
+                            @endforeach
+                        </section>
+                    @endisset
+                @else
+                    <h4 class="font-medium text-3xl text-center">COLOR OPTIONS</h4>
+                    <section class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-8 px-2 md:px-4">
+                        <div>
+                            <a href="{{ asset('/img/products/color/sterling-silver.jpg') }}"
+                                data-fslightbox="Color Option">
+                                <div class="w-64 h-64 mx-auto bg-cover bg-no-repeat"
+                                    style="background-image: url('{{ asset('/img/products/color/sterling-silver.jpg') }}')">
+                                </div>
+                            </a>
+                            <p class="font-medium text-center text-lg">Sterling Silver Acrylic</p>
+                        </div>
+                        <div>
+                            <a href="{{ asset('/img/products/color/gray_cabinet.jpg') }}"
+                                data-fslightbox="Color Option">
+                                <div class="w-64 h-52 mx-auto bg-cover bg-no-repeat"
+                                    style="background-image: url('{{ asset('/img/products/color/gray_cabinet.jpg') }}')">
+                                </div>
+                            </a>
+                            <p class="font-medium text-center text-lg">Gray Cabinets</p>
+                        </div>
+                    </section>
+                @endif
                 @if ($product->type === 'plug-and-play-hot-tubs' or $product->type == 'full-powered-hot-tubs')
                     {{-- Offer --}}
                     <x-frontend.offer />

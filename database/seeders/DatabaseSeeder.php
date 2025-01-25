@@ -463,7 +463,8 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "3",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
+            "color" => ["Sterling Silver" => "2.png", "Odyssey" => "3.png", "Espresso" => "4.png", "Pearl Shadow" => "5.png"]
         ]);
         // THE ULURU II (ES6DL)
         Product::factory()->create([
@@ -539,7 +540,8 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "4",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
+            "color" => ["Sterling Silver" => "1.png", "Odyssey" => "2.png", "Espresso" => "3.png", "Pearl Shadow" => "4.png"],
         ]);
         // THE EREBUS II (ES6L)
         Product::factory()->create([
@@ -615,7 +617,8 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "5",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
+            "color" => ["Sterling Silver" => "1.jpg", "Odyssey" => "2.png", "Espresso" => "3.png", "Pearl Shadow" => "4.png"],
         ]);
         // THE MARIANA (ES7L)
         Product::factory()->create([
@@ -691,7 +694,9 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "6",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
+            "color" => ["Sterling Silver" => "1.png", "Odyssey" => "2.png", "Espresso" => "3.png", "Pearl Shadow" => "4.png"],
+
         ]);
         // THE GLENCOE (ES7NL)
         Product::factory()->create([
@@ -767,7 +772,9 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "7",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
+            "color" => ["Sterling Silver" => "1.png", "Odyssey" => "2.png", "Espresso" => "3.png", "Pearl Shadow" => "4.png"],
+
         ]);
         // THE HA LONG BAY (ES8DL)
         Product::factory()->create([
@@ -843,7 +850,8 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "5",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
+            "color" => ["Sterling Silver" => "1.png", "Odyssey" => "2.png", "Espresso" => "3.png", "Pearl Shadow" => "4.png"],
         ]);
         // THE KERN RIVER (ES8L)
         Product::factory()->create([
@@ -907,7 +915,7 @@ class DatabaseSeeder extends Seeder
             "free_color_matching_step" => true,
             "free_starter_chemical_kit" => true,
             "person_capacity" => "6",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
         ]);
 
         // ALPHA (GS5L)
@@ -937,7 +945,7 @@ class DatabaseSeeder extends Seeder
             ],
             "warranty" => "<h1>10 Year Warranty</h1><h4>Shell Structure</h4><p>For 10 YEARS from the original date of purchase, as long as the spa is owned by the original buyer, $appname Hot Tubs guarantees its spas to be structurally sound, capable of holding water only, and free from water loss through the Acrylobond laminate of the spa shell due to flaws in materials and/or workmanship. After inspecting the spa, $appname Hot Tubs reserves the right to decide whether to send it back to the manufacturer for shell replacement or repair. If the factory needs to be contacted again, the spa owner will be responsible for both the removal and return of the malfunctioning spa and the delivery and reinstallation of the new spa.</p><br/><br/><h1>3 Years Warranty</h1><h4>Plumbing</h4><p>As long as the spa is owned by the original buyer, $appname Hot Tubs guarantees all plumbing components to be free from flaws in material and/or workmanship for a period of 3 YEARS from the original date of purchase. Furthermore, leaks from wall fittings, jet fittings, internal plumbing, internal glue joints, freeze drains, and all bonded parts, such as the filter compartment and light lens, are expressly covered by this limited warranty. This Limited Warranty excludes damage resulting from improper winterization of the spa after a component failure or from improper winterization of the spa before freezing weather.</p><br/><br/><h1>1 Year Warranty</h1><h4>Other Components</h4><p>For a full year following the original purchase date, the mechanical and auxiliary electrical systems are guaranteed against malfunctioning due to defects in materials and workmanship. Water purification systems, LED control units, lighting systems, speakers, power supplies, audio units, and audio remotes are examples of ancillary electrical systems. Water diverters, water value, air controls, and jet internals are examples of mechanical parts. Under warranty, there is no coverage for jet damage resulting from chemical imbalances or extremes in the water. Replaceable service items (lights, bulbs, fuses, pillows, etc.) are guaranteed to be free from defects in materials and/or workmanship at the time of delivery to the original purchaser, even though they are not covered by this warranty. This excludes wireless remotes, for which there is no labor warranty covering replacement of any kind. Skirting panels have a one-year warranty against blistering and cracking; there is no labor warranty on jet internal replacement. typical wear and fading. This limited warranty does not cover minor bowing, discoloration, or weathering of the skirting panels, which may happen under certain circumstances. If the skirting panels break as a result of flaws in the materials or workmanship, this limited warranty will cover replacement parts only for the damaged areas of the panels. The sole cost of replacement skirting panel installation and shipping is borne by the spa owner.</p><br/><br/><h1>Three Year Warranty</h1><h4>Surface Finish</h4><p>As long as the spa is owned by the original buyer, $appname Hot Tubs warrants that the interior surface finish of its spas will not blister or crack due to flaws in the acrylic surface material for a period of 3 YEARS from the original date of purchase. Faded or discolored surfaces are not covered by this surface finish warranty. Additionally, this Limited Warranty is void if any of the following contribute to or cause a failure: incorrect chemical usage, improper installation, improper introduction of foreign materials into the water, etc. The acrylic surface repair is further limited to the damaged area of the surface alone, and the repair is not warranted against fading or discoloration if there is a defect and/or failure to sufficiently protect the surface from exposure to the sun, elements, and extreme temperatures. Not a component of the acrylobond structure, the acrylic surface is merely a finish. The spa owner will be responsible for the removal and return of the defective spa to the factory, as well as for the delivery and reinstallation of the replacement spa, if a return to the factory is necessary</p><br/><br/><h1>Three Year Warranty</h1><h4>Electrical Equipment Components</h4><p>For a duration of 3 YEARS from the original date of purchase, $appname Hot Tubs exclusively warrants the original owner of the electrical equipment components—more especially, the control system (pack and topside), pumps, and heaters—against malfunctions or defects in materials and/or workmanship. If the failure results from or is exacerbated by any of the following, this limited warranty will not cover it: incorrect wiring, using extension cords, making unauthorized changes or modifications, or failing to plug into isolated service as directed by the manufacturer's specifications. Additionally, the original equipment manufacturers' guidelines are adhered to by this Limited Warranty. Maintained by $appname Hot Tubs on your behalf, the labor coverage is an extended warranty program. The process for filing warranty claims can be found at your dealer or an approved repair facility.</p><br/><br/><h4>Limitations And Exclusions:</h4><p>General/Performance in the event that this Limited Warranty covers any defect. Such a defect will be corrected in accordance with the terms and conditions of this Limited Warranty by $appname Hot Tubs or its authorized agent. For services rendered after the first delivery, a fair trip fee will apply. For warranty service, the homeowner must grant complete access to every part of the spa. $appname Hot Tubs disclaims all liability for the installation, demolition, and reconstruction of any structures that surround the hot tub. The product made exclusively by $appname Hot Tubs is covered by the limited warranty. The balance, if any, on the original warranty for any parts or components replaced under this warranty will be transferred to the replacement goods. $appname Hot Tubs retains the right to send the hot tub back to the factory for repair or replacement with a hot tub of equivalent value to the original purchase price in the event that it is determined that a field repair of the covered defect is not practical. Should a factory return be necessary, the spa owner shall be responsible for the removal and return of the malfunctioning hot tub as well as the delivery and reinstallation of the new hot tub. The remaining balance on the original spa, if any, will be covered by the replacement hot tub warranty. For repairs made by anybody other than an authorized $appname Hot Tubs, Inc. contractor, the spa owner assumes liability. evocative. When seeking service, make sure to protect the hot tub from additional harm by taking all appropriate precautions and notifying your authorized $appname Hot Tubs dealer as soon as possible.</p>",
             "person_capacity" => "3",
-            "fully_powered" => "240V"
+            "fully_powered" => "240V",
         ]);
         // GH550 (GS6NL)
         Product::factory()->create([
