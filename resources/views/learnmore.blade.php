@@ -500,12 +500,7 @@
                         </div>
                         <div>
                             <p class="text-4xl">{{ $productType }}'s Warranty</p>
-                            <p class="text-lg">A copy of the {{ $productType }}'s Manual will be delivered with the
-                                hot tub.
-                                Or,
-                                you
-                                may download a
-                                copy here.</p>
+                            <p class="text-lg">Download a copy of the {{ $productType }}'s warranty.</p>
                             <a href="{{ asset($productPDF) }}" download="{{ $productType }}'s Manual"
                                 class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
                                 style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
