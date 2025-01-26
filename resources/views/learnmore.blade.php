@@ -340,7 +340,7 @@
                                             </p>
                                         @endforeach
                                     @endif
-                                    @if ($product->type == 'hydro-series')
+                                    @if ($product->type != 'earth-spas' or $product->type != 'generation-hottubs')
                                         <p class="">See additional warranty information <a
                                                 href="{{ route('warranty') }}">here</a>.</p>
                                     @endif
@@ -499,7 +499,7 @@
                             <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
                         </div>
                         <div>
-                            <p class="text-4xl">{{ $productType }}'s Manual</p>
+                            <p class="text-4xl">{{ $productType }}'s Warranty</p>
                             <p class="text-lg">A copy of the {{ $productType }}'s Manual will be delivered with the
                                 hot tub.
                                 Or,
