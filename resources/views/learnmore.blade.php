@@ -340,8 +340,10 @@
                                             </p>
                                         @endforeach
                                     @endif
-                                    <p class="">See additional warranty information <a
-                                            href="{{ route('warranty') }}">here</a>.</p>
+                                    @if ($product->type == 'hydro-series')
+                                        <p class="">See additional warranty information <a
+                                                href="{{ route('warranty') }}">here</a>.</p>
+                                    @endif
                                 </div>
                             @endisset
                         </div>
@@ -458,27 +460,58 @@
                             </div>
                         @endif
                     </section>
-                    {{-- Owners Manual --}}
-                    <section class="w-full flex items-center justify-center py-8">
-                        <div
-                            class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
-                            <div>
-                                <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
-                            </div>
-                            <div>
-                                <p class="text-4xl">Owner's Manual</p>
-                                <p class="text-lg">A copy of the Spa Owner's Manual will be delivered with the hot tub.
-                                    Or,
-                                    you
-                                    may download a
-                                    copy here.</p>
-                                <a href="{{ asset('manual.pdf') }}" download="Owner's Manual"
-                                    class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
-                                    style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
-                            </div>
-                        </div>
-                    </section>
                 @endif
+                {{-- Owners Manual --}}
+                <section class="w-full flex items-stretch justify-center gap-8 px-4 py-8">
+                    <div
+                        class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
+                        <div>
+                            <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
+                        </div>
+                        <div>
+                            <p class="text-4xl">Owner's Manual</p>
+                            <p class="text-lg">A copy of the Spa Owner's Manual will be delivered with the hot tub.
+                                Or,
+                                you
+                                may download a
+                                copy here.</p>
+                            <a href="{{ asset('/pdf/manualwarranty.pdf') }}" download="Owner's Manual"
+                                class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
+                                style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
+                        </div>
+                    </div>
+                    @php
+
+                        if ($product->type == 'generation-hottubs') {
+                            $productType = 'Generation Hot Tub';
+                            $productPDF = '/pdf/generationhottubwarranty.pdf';
+                        } elseif ($product->type == 'earth-spas') {
+                            $productType = 'Earth Spa';
+                            $productPDF = '/pdf/earthspaswarranty.pdf';
+                        } else {
+                            $productType = 'Hydro Series';
+                            $productPDF = '/pdf/hydroserieswarranty.pdf';
+                        }
+                    @endphp
+                    <div
+                        class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
+                        <div>
+                            <img src="{{ asset('/img/manual_cover.svg') }}" alt="">
+                        </div>
+                        <div>
+                            <p class="text-4xl">{{ $productType }}'s Manual</p>
+                            <p class="text-lg">A copy of the {{ $productType }}'s Manual will be delivered with the
+                                hot tub.
+                                Or,
+                                you
+                                may download a
+                                copy here.</p>
+                            <a href="{{ asset($productPDF) }}" download="{{ $productType }}'s Manual"
+                                class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
+                                style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="bg-gray-300 pt-8 pb-5 px-4 sm:px-8 xl:px-24">
                 <p class="text-2xl">You might also be interested in...</p>

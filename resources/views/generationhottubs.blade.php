@@ -24,7 +24,7 @@
     <x-frontend.intro />
     <section class="pt-16 px-4 space-y-5 sm:px-12 xl:px-32">
         <div class="space-y-3">
-            <h4 class="text-5xl text-center">Generation Hottubs</h4>
+            <h4 class="text-5xl text-center">Generation Hot Tubs</h4>
             <p class="text-xl text-center">Discover a stunning range of hot tubs</p>
         </div>
         <div class="grid grid-cols-1 gap-12 justify-evenly xl:grid-cols-2">
