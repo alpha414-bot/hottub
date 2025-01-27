@@ -463,6 +463,22 @@
                 @endif
                 {{-- Owners Manual --}}
                 <section class="w-full flex items-stretch justify-center gap-8 px-4 py-8">
+                    @php
+
+                        if ($product->type == 'generation-hottubs') {
+                            $productType = 'Generation Hot Tub';
+                            $productOwnerPDF = 'generationownermanual.pdf';
+                            $productPDF = 'generationhottubwarranty.pdf';
+                        } elseif ($product->type == 'earth-spas') {
+                            $productType = 'Earth Spa';
+                            $productOwnerPDF = 'earthspasownermanual.pdf';
+                            $productPDF = 'earthspaswarranty.pdf';
+                        } else {
+                            $productType = 'Hydro Series';
+                            $productOwnerPDF = 'hydroseriesownermanual.pdf';
+                            $productPDF = 'hydroserieswarranty.pdf';
+                        }
+                    @endphp
                     <div
                         class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
                         <div>
@@ -475,24 +491,12 @@
                                 you
                                 may download a
                                 copy here.</p>
-                            <a href="{{ asset('/pdf/manualwarranty.pdf') }}" download="Owner's Manual"
+                            <a href="{{ asset('/pdf/' . $productOwnerPDF) }}"
+                                download="{{ $productType }} Owner's Manual"
                                 class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
                                 style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
                         </div>
                     </div>
-                    @php
-
-                        if ($product->type == 'generation-hottubs') {
-                            $productType = 'Generation Hot Tub';
-                            $productPDF = '/pdf/generationhottubwarranty.pdf';
-                        } elseif ($product->type == 'earth-spas') {
-                            $productType = 'Earth Spa';
-                            $productPDF = '/pdf/earthspaswarranty.pdf';
-                        } else {
-                            $productType = 'Hydro Series';
-                            $productPDF = '/pdf/hydroserieswarranty.pdf';
-                        }
-                    @endphp
                     <div
                         class="w-[42rem] mx-auto py-6 px-5 bg-gray-200 border border-black rounded-2xl inline-grid grid-cols-1 items-center gap-x-4 gap-y-4 md:grid-cols-2">
                         <div>
@@ -501,7 +505,7 @@
                         <div>
                             <p class="text-4xl">{{ $productType }}'s Warranty</p>
                             <p class="text-lg">Download a copy of the {{ $productType }}'s warranty.</p>
-                            <a href="{{ asset($productPDF) }}" download="{{ $productType }}'s Manual"
+                            <a href="{{ asset('/pdf/' . $productPDF) }}" download="{{ $productType }}'s Manual"
                                 class="block rounded-2xl overflow-hidden w-8 h-14 bg-contain bg-center bg-no-repeat"
                                 style="background-image: url('{{ asset('/img/pdf.svg') }}')"></a>
                         </div>
