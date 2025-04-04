@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('address', config("app.address"));
         View::share("map_address", config("app.map_address"));
         View::share("telephone", config("app.telephone"));
-        View::share("mail", config("app.mail"));
+        View::share("mail", config("app.website_mail"));
         View::share("facebook_link", config("app.facebook_link"));
         View::share("linkedin_link", config("app.linkedin_link"));
         View::share("instagram_link", config("app.instagram_link"));

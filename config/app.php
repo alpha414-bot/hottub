@@ -129,7 +129,7 @@ return [
     "address" => env("ADDRESS", ""),
     "map_address" => env("MAP_ADDRESS", ""),
     "telephone" => env("TELEPHONE", ""),
-    "mail" => env("MAIL", ""),
+    "website_mail" => env("WEBSITE_MAIL", ""),
     "facebook_link" => env("FACEBOOK_LINK", ""),
     "linkedin_link" => env("LINKEDIN_LINK", ""),
     "instagram_link" => env("INSTAGRAM_LINK", ""),
